@@ -70,6 +70,9 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
+                                    <li>
+                                        <a href="/profile/{{ Auth::user()->username }}">My Profile</a>
+                                    </li>
                                 </ul>
                             </li>
                         @endif
