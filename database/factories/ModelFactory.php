@@ -33,6 +33,6 @@ $factory->define(App\Read::class, function (Faker\Generator $faker) {
     return [
     	'lesson_id' => App\Lesson::all()->random()->id,
     	'user_id' => App\User::all()->random()->id,
-    	'page_number' => $faker->numberBetween($min=1, $max = 10),
+    	'page_read' => $faker->numberBetween($min=1, $max = 10),
     ];
 });
