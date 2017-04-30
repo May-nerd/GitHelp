@@ -36,3 +36,12 @@ $factory->define(App\Read::class, function (Faker\Generator $faker) {
     	'page_read' => $faker->numberBetween($min=1, $max = 10),
     ];
 });
+
+$factory->define(App\Page::class, function (Faker\Generator $faker) {
+    return [
+    	'page_number' => $faker->numberBetween($min=1, $max = 10),
+    	'lesson_id' => App\Lesson::all()->random()->id,
+    	'title' => $faker->word,
+    	'content' => $faker->paragraph(6),
+    ];
+});

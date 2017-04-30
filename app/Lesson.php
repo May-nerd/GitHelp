@@ -13,4 +13,8 @@ class Lesson extends Model
     public function users(){
     	return $this->belongsToMany('App\User', 'reads', 'lesson_id', 'user_id');
     }
+
+    public function pages(){
+    	return $this->hasMany('App\Page');
+    }
 }
