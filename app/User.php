@@ -28,6 +28,6 @@ class User extends Authenticatable
     ];
 
     public function reads(){
-        return $this->belongsToMany('App\Read');
+        return $this->belongsToMany('App\Lesson', 'reads', 'user_id', 'lesson_id');
     }
 }
