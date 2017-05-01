@@ -17,7 +17,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
     return [
     	'name' => $faker->name,
-    	'username' => $faker->word,
+    	'username' => $faker->userName,
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
         'role' => $faker->numberBetween($min = 1, $max = 3),
@@ -26,7 +26,8 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 });
 $factory->define(App\Lesson::class, function (Faker\Generator $faker) {
     return [
-    	'title' => $faker->word,
+    	'user_id' => App\User::all()->random()->id,
+        'title' => $faker->sentence(4),
     ];
 });
 $factory->define(App\Read::class, function (Faker\Generator $faker) {
@@ -41,7 +42,7 @@ $factory->define(App\Page::class, function (Faker\Generator $faker) {
     return [
     	'page_number' => $faker->numberBetween($min=1, $max = 10),
     	'lesson_id' => App\Lesson::all()->random()->id,
-    	'title' => $faker->word,
+    	'title' => $faker->sentence(4),
     	'content' => $faker->paragraph(6),
     ];
 });

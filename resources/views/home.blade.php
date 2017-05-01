@@ -9,6 +9,16 @@
 
                 <div class="panel-body">
                     You are logged in!
+                    <div>
+                        <h4>Your lessons</h4>
+                        @forelse(Auth::user()->creates as $lesson)
+                            <div>
+                                {{ $lesson->title }}
+                            </div>
+                        @empty
+                            WALA.
+                        @endforelse
+                    </div>
                 </div>
             </div>
         </div>
