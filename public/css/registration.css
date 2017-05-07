@@ -1,0 +1,13 @@
+/****************************************
+*			STYLE FOR REGISTRATION      *
+*****************************************/
+body {
+	background-color: rgb(206, 209, 204);
+}
+.nav {
+	background-color: rgb(86, 90, 92);
+	color: rgb(206, 209, 204);
+	border-bottom: rgb(255, 90, 92);
+}
+
+
