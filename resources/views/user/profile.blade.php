@@ -8,8 +8,9 @@
 				<h4>Lessons Read</h4>
 			</div>
 			<div class="panel-body">
-				@forelse($user->reads as $read)
-					{{ $read->title }} by <a href="/profile/{{ $read->createdBy->username }}">{{ $read->createdBy->name }}</a>
+				@forelse($lessons as $lesson)
+					{{ $lesson->title }} by <a href="/profile/{{ $lesson->createdBy->username }}">{{ $lesson->createdBy->name }}</a>
+					<p class="small">Total pages: <span class="badge">{{ $lesson->pages->count() }}</span></p>
 					<hr />
 				@empty
 					<h4>You have not read any lessons yet!</h4>
