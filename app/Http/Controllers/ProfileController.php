@@ -14,4 +14,26 @@ class ProfileController extends Controller
 
     	return view('user.profile', compact(['user', 'lessons']));
     }
+    public function settings($username){
+    	$user = User::whereUsername($username)->first();
+    	
+    	return view('user.settings', compact('user'));
+    }
+    public function edit($id){
+    	$user = User::findOrFail($id);
+    	return view('user.edit',compact('user'));
+    }
+
+    public function update(Request $request, $username){
+    	$user = User::whereUsername($username)->first();
+
+    	foreach($request as $key=>$value){
+    		if($value=="")
+    			$value = $user[$key];
+    		if($key == "password" && $value != "")
+    			$request->merge(array('password'=>bcrypt($request->password)));
+    	}
+    	$user->update($request->all());
+    	return redirect('/profile/'.$username);
+    }
 }

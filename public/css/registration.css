@@ -4,10 +4,43 @@
 body {
 	background-color: rgb(206, 209, 204);
 }
-.nav {
-	background-color: rgb(86, 90, 92);
-	color: rgb(206, 209, 204);
-	border-bottom: rgb(255, 90, 92);
+
+.navbar {
+	background-color: white;
+	color: rgb(0, 122, 135);
+	
 }
 
+.panel {
+	border-radius: 0;
+	padding: 10px 20px;
+}
 
+.form-control {
+	background-color: transparent;
+	border: 2px solid rgb(206, 209, 204);
+	border-radius: 0;
+}
+
+.btn {
+	width: 100%;
+}
+
+.navbar ul li {
+	padding: 0 5px;
+	display: inline-block;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+.navbar ul li:after {
+  	display: block;
+  	content: '';
+  	border-bottom: solid 3px rgb(0, 122, 135);
+  	transform: scaleX(0); 
+  	transition: transform 250ms ease-in-out;
+}
+
+.navbar ul li:hover:after {
+	transform: scaleX(1);
+}
