@@ -42,7 +42,5 @@
 	</div>
 </div>
 
-@section('javascript')
-    <script>Scripts from one</script>
-    @parent
-@stop
+
+@endsection
