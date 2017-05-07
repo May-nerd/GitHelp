@@ -9,11 +9,10 @@
 			</div>
 			<div class="panel-body">
 				@forelse($user->reads as $read)
-					<div>
-						<h4>{{ $read->title }}</h4> By <span>{{ $read->createdBy->name }}</span>
-					</div>
+					{{ $read->title }}
+					<hr />
 				@empty
-					WALA.
+					<h4>You have not read any lessons yet!</h4>
 				@endforelse
 			</div>
 		</div>

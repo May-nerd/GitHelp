@@ -8,17 +8,27 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
-                    <div>
-                        <h4>Your lessons</h4>
-                        @forelse(Auth::user()->creates as $lesson)
-                            <div>
-                                {{ $lesson->title }}
-                            </div>
-                        @empty
-                            WALA.
-                        @endforelse
-                    </div>
+                    <h1>Welcome, dear
+                    @if(Auth::user()->role == 1)
+                        student
+                    @elseif(Auth::user()->role == 2)
+                        teacher
+                    @else
+                        admin
+                    @endif
+                    !</h1>
+                    @if(Auth::user()->role == 2)
+                        <div>
+                            <h4>Your lessons</h4>
+                            @forelse(Auth::user()->creates as $lesson)
+                                <div>
+                                    {{ $lesson->title }}
+                                </div>
+                            @empty
+                                WALA.
+                            @endforelse
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
