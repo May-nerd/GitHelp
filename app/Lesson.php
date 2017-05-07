@@ -15,7 +15,7 @@ class Lesson extends Model
     }
 
     public function createdBy(){
-    	return $this->belongsTo('App\User');
+    	return $this->belongsTo('App\User', 'user_id');
     }
 
     public function pages(){
