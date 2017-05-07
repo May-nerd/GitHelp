@@ -9,6 +9,13 @@
 			</div>
 			<div class="panel-body">
 				<h3>{{$user->name }}</h3>
+				<h3>{{$user->username }}</h3>
+				<h3>{{$user->email }}</h3>
+				@if ($user->role == 1)
+	                <h3>Student</h3>
+	            @else
+	            	<h3>Teacher</h3>
+	            @endif
 			</div>
 			<hr>
 			<div class="panel-heading">

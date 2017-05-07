@@ -22,8 +22,12 @@
 						<input type="text" name="username" class="form-control" value="{{ $user->username }}">
 					</div>
 					<div class="form-goup">
-						<label for="password">Password: </label>
-						<input type="password" class="form-control" name="password" >
+						<label for="password">Old Password: </label>
+						<input type="password" class="form-control" name="password">
+					</div>
+					<div class="form-goup">
+						<label for="confpassword">Confirm Password: </label>
+						<input type="password" class="form-control" name="confpassword">
 					</div>
 					<div class="form-goup">
 						<label for="email">Email: </label>
@@ -37,4 +41,8 @@
 		</div>
 	</div>
 </div>
-@endsection
+
+@section('javascript')
+    <script>Scripts from one</script>
+    @parent
+@stop

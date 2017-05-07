@@ -26,12 +26,16 @@ class ProfileController extends Controller
 
     public function update(Request $request, $username){
     	$user = User::whereUsername($username)->first();
+    	$password= $request->password;
+    	$confpassword= $request->confpassword;
 
     	foreach($request as $key=>$value){
     		if($value=="")
     			$value = $user[$key];
     		if($key == "password" && $value != "")
     			$request->merge(array('password'=>bcrypt($request->password)));
+    		if($password!=$confpassword)
+    			return ('catch it!');
     	}
     	$user->update($request->all());
     	return redirect('/profile/'.$username);
