@@ -64,6 +64,9 @@
                                         <a href="/profile/{{ Auth::user()->username }}">My Profile</a>
                                     </li>
                                     <li>
+                                        <a href="/profile/{{ Auth::user()->username }}/settings">Profile Settings</a>
+                                    </li>
+                                    <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
