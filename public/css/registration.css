@@ -1,0 +1,24 @@
+body {
+	background-color: rgb(206, 209, 204);
+}
+
+.navbar {
+	background-color: white;
+	color: rgb(0, 122, 135);
+	
+}
+
+.panel {
+	background-color: ;
+	border-radius: 0;
+}
+
+.form-control {
+	background-color: transparent;
+	border: 2px solid rgb(206, 209, 204);
+	border-radius: 0;
+}
+
+.btn-primary {
+
+}
