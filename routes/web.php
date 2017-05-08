@@ -19,12 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/profile/{username}', 'ProfileController@profile');
-<<<<<<< HEAD
+
 
 Route::get('/profile/edit/{username}', 'ProfileController@edit');
-
-
-=======
-Route::get('/profile/{username}/settings', 'ProfileController@settings');
 Route::resource('/profile', 'ProfileController');
->>>>>>> bd76130c67b49a754f685150cc13206ffb109d6b
