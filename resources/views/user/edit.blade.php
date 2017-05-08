@@ -9,7 +9,7 @@
 			</div>
 			<div class="panel-body">
 
-				<form class="form-horizontal" role="form" method="POST" action="/profile/edit/{{ Auth::user()->id }}">
+				<form class="form-horizontal" role="form" method="get" action="/profile/update/{{ Auth::user()->username }}">
           {{ csrf_field() }}
           {{ method_field('PUT') }}
           <input type="hidden" name="_token" value="">
@@ -44,7 +44,7 @@
           <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
             <label for="new-password" class="col-md-4 control-label">New Password</label>
 	            <div class="col-md-6">
-  	            <input id="new-password" type="password" class="form-control" name="new-password" required>
+  	            <input id="new-password" type="password" class="form-control" name="new-password" >
 
                 @if ($errors->has('new-password'))
                   <span class="help-block">

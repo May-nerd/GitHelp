@@ -20,7 +20,7 @@
 					<h4>You have not read any lessons yet!</h4>
 				@endforelse
 				
-				<p><a href="/profile/edit/{{ Auth::user()->id }}">Edit Profile</a></p>
+				<p><a href="/profile/edit/{{ Auth::user()->username}}">Edit Profile</a></p>
 				
 			</div>
 		</div>

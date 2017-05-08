@@ -21,11 +21,10 @@ class ProfileController extends Controller
     	return view('user.settings', compact('user'));
     }
 
-    public function edit($id){
-    	$user = User::findOrFail($id);
+    public function edit($username){
+    	$user = User::whereUsername($username)->first();
     	return view('user.edit',compact('user'));
     }
-
 
     public function update(Request $request, $username){
     	$user = User::whereUsername($username)->first();

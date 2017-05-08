@@ -22,4 +22,5 @@ Route::get('/profile/{username}', 'ProfileController@profile');
 
 
 Route::get('/profile/edit/{username}', 'ProfileController@edit');
+Route::get('/profile/update/{username}', 'ProfileController@update');
 Route::resource('/profile', 'ProfileController');
