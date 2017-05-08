@@ -15,6 +15,9 @@
 				@empty
 					WALA.
 				@endforelse
+				
+				<p><a href="/profile/edit/{{ Auth::user()->id }}">Edit Profile</a></p>
+				
 			</div>
 		</div>
 	</div>
