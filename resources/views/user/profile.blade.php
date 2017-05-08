@@ -20,10 +20,6 @@
 					<h4>You have not read any lessons yet!</h4>
 				@endforelse
 				
-<<<<<<< HEAD
-				<p><a href="/profile/edit/{{ Auth::user()->username}}">Edit Profile</a></p>
-=======
->>>>>>> 413a141ab671dc836c45613afb009172fee80cf9
 				
 			</div>
 		</div>
