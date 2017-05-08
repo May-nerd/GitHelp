@@ -8,10 +8,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'GitHelp') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/registration.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -36,7 +37,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ config('app.name', 'GitHelp') }}
                     </a>
                 </div>
 
@@ -60,6 +61,12 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
+                                        <a href="/profile/{{ Auth::user()->username }}">My Profile</a>
+                                    </li>
+                                    <li>
+                                        <a href="/profile/{{ Auth::user()->username }}/settings">Profile Settings</a>
+                                    </li>
+                                    <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -69,9 +76,6 @@
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
-                                    </li>
-                                    <li>
-                                        <a href="/profile/{{ Auth::user()->username }}">My Profile</a>
                                     </li>
                                 </ul>
                             </li>

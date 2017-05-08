@@ -5,15 +5,19 @@
 	<div class="row col-xs-8 col-xs-offset-2">
 		<div class="panel panel-default">
 			<div class="panel-heading">
+				<h4>Account</h4>
+			</div>
+			
+			<div class="panel-heading">
 				<h4>Lessons Read</h4>
 			</div>
 			<div class="panel-body">
-				@forelse($user->reads as $read)
-					<div>
-						<h4>{{ $read->title }}</h4> By <span>{{ $read->createdBy->name }}</span>
-					</div>
+				@forelse($lessons as $lesson)
+					{{ $lesson->title }} by <a href="/profile/{{ $lesson->createdBy->username }}">{{ $lesson->createdBy->name }}</a>
+					<p class="small">Total pages: <span class="badge">{{ $lesson->pages->count() }}</span></p>
+					<hr />
 				@empty
-					WALA.
+					<h4>You have not read any lessons yet!</h4>
 				@endforelse
 				
 				<p><a href="/profile/edit/{{ Auth::user()->id }}">Edit Profile</a></p>
