@@ -12,7 +12,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/registration.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom_bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/form.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    @stack('styles')
+    <link href="{{ asset('css/autofill_handler.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -90,5 +94,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    @stack('scripts')
 </body>
 </html>

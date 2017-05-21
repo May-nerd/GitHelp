@@ -1,0 +1,14 @@
+.left-panel,
+.right-panel{
+	display: flex;
+	align-items: center;
+	min-height: 80vh;
+}
+
+.left-panel{
+	justify-content: flex-end;
+}
+
+.right-panel{
+	justify-content: flex-start;
+}

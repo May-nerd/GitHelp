@@ -88,3 +88,7 @@
     </div>
 </div>
 @endsection
+
+@push('styles')
+    <!-- <link rel="stylesheet" type="text/css" href="{{asset('css/registration.css')}}"/> -->
+@endpush
