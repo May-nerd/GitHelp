@@ -41,7 +41,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'GitHelp') }}
+                        <span class="git">Git</span>
                     </a>
                 </div>
 
