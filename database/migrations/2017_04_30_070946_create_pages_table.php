@@ -17,7 +17,7 @@ class CreatePagesTable extends Migration
             $table->integer('page_number');
             $table->integer('lesson_id');
             $table->string('title');
-            $table->string('content');
+            $table->text('content');
             $table->enum('has_image', ['0', '1']);
             $table->timestamps();
         });
