@@ -15,12 +15,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Auth::routes();
 
+// ============STATIC VIEW ==============
+Route::get('/Create Lesson Plan', 'LessonController@show');
+// ======================================
+
+
 Route::group(['middleware' => 'auth'], function(){
+	
 	Route::get('/home', 'HomeController@index');
 	Route::get('/profile/{username}', 'ProfileController@profile');
-
 
 
 	Route::get('/profile/edit/{username}', 'ProfileController@edit');
