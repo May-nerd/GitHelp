@@ -14,8 +14,8 @@
                             <div class="input-group center-block text-center">
                                 <input type="text" class="form-control text-center" name="title" placeholder="Title of your lesson" />
                             </div>
-                            <div class="input-group">
-                                 <button class="btn btn-primary pull-right" name="addPage"><span class="glyphicon glyphicon-plus"></span> &nbsp;Add a Page</button>
+                            <div class="input-group pull-right">
+                                 <button class="btn btn-primary " name="addPage"><span class="glyphicon glyphicon-plus"></span> &nbsp;Add a Page</button>
                             </div>
 
                         </div>

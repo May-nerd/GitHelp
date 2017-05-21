@@ -12,7 +12,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/registration.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom_bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/form.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    @stack('styles')
+    <link href="{{ asset('css/autofill_handler.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -30,14 +34,14 @@
                     <!-- Collapsed Hamburger -->
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                         <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                        <span class="glyphicon glyphicon-menu-hamburger"></span>
+                        <!-- <span class="icon-bar"></span> -->
+                        <!-- <span class="icon-bar"></span> -->
                     </button>
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'GitHelp') }}
+                        <span class="git">Git</span>
                     </a>
                 </div>
 
@@ -90,5 +94,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    @stack('scripts')
 </body>
 </html>
