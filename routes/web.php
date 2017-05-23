@@ -23,7 +23,7 @@ Route::get('profile', function(){
 Auth::routes();
 
 // ============STATIC VIEW ==============
-Route::get('/Create Lesson Plan', 'LessonController@show');
+Route::get('/create_lesson_plan', 'LessonController@show');
 // ======================================
 
 
