@@ -69,6 +69,7 @@
                         </div>
                     </div>
 
+                <input type="submit" name="submit" class="btn btn-success"/>
                 </div>  
             </div>
 
