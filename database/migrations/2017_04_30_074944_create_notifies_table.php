@@ -14,10 +14,14 @@ class CreateNotifiesTable extends Migration
     public function up()
     {
         Schema::create('notifies', function (Blueprint $table) {
-            $table->integer('notif_id');
-            $table->integer('user_id');
-            $table->integer('read');
+            $table->increments('id');
+            $table->integer('notif_id')->unsigned();
+            $table->integer('user_id')->unsigned();
+            $table->boolean('read');
             $table->timestamps();
+
+            $table->foreign('notif_id')->references('id')->on('notifs');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
