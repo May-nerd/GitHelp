@@ -23,9 +23,12 @@ Route::get('profile', function(){
 Auth::routes();
 
 // ============STATIC VIEW ==============
-Route::get('/create_lesson_plan', 'LessonController@show');
+Route::get('/create_lesson_plan', 'LessonController@create');
 // ======================================
 
+// do NOT include in Route::group
+// LessonController already handles middleware
+Route::resource('/lessons', 'LessonController');
 
 Route::group(['middleware' => 'auth'], function(){
 	
