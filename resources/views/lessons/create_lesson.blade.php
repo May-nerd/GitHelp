@@ -16,7 +16,7 @@
                             </div>
                         </div>
                     </div>
-                                    
+
                     <div class="panel panel-default custom-sub-panel">
                         <div class="panel-heading custom-heading">
                             <div class="col-md-6 pull-left center-block">
@@ -27,7 +27,7 @@
                             </div>
                         </div>
                         <div class="panel-body custom-body">
-                            <p id="uploadPanel">
+                            <p class="uploadPanel">
                                 <label class="fileContainer btn btn-default">
                                     <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image
                                     <input type="file" name="imgUpload" class="btn btn-success"/>
@@ -35,11 +35,11 @@
                                 <strong>Upload an Image for this page (Optional)</strong>
                             </p>
                             <div class="input-group center-block">
-                              <textarea name="pageContent" class="form-control" id="textArea" placeholder="What is this page about?"></textarea>
+                              <textarea name="pageContent" class="form-control textArea" placeholder="What is this page about?"></textarea>
                             </div>
                         </div>
                         <div class="panel-footer text-right custom-footer">
-                            <label id="pageNum">1</label>
+                            <label class="pageNum">1</label>
                         </div>
                     </div>
 
@@ -53,7 +53,7 @@
                             </div>
                         </div>
                         <div class="panel-body custom-body">
-                            <p id="uploadPanel">
+                            <p class="uploadPanel">
                                 <label class="fileContainer btn btn-default">
                                     <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image
                                     <input type="file" name="imgUpload" class="btn btn-success"/>
@@ -61,19 +61,19 @@
                                 <strong>Upload an Image for this page (Optional)</strong>
                             </p>
                             <div class="input-group center-block">
-                              <textarea name="pageContent" class="form-control" id="textArea" placeholder="What is this page about?"></textarea>
+                              <textarea name="pageContent" class="form-control textArea" placeholder="What is this page about?"></textarea>
                             </div>
                         </div>
                         <div class="panel-footer text-right custom-footer">
-                            <label id="pageNum">2</label>
+                            <label class="pageNum">2</label>
                         </div>
                     </div>
 
                 <input type="submit" name="submit" class="btn btn-success"/>
-                </div>  
+                </div>
             </div>
 
-            <button class="btn btn-primary pull-right" title="Add another Page" name="addPage" id="addPgBtn"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add a Page</button>
+            <button class="btn btn-primary pull-right addPgBtn" title="Add another Page" name="addPage"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add a Page</button>
 
         </form>
     </div>

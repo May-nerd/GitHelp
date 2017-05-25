@@ -41,7 +41,7 @@
 	background-color: #d6ff5a;
 }
 
-#textArea{
+.textArea{
 	height: 200px;
 	border: 1px solid rgba(128,128,128, 0.2);
 	box-shadow: none;
@@ -49,7 +49,7 @@
 	font-size: 15px;
 }
 
-#addPgBtn{
+.addPgBtn{
 	position: fixed;
     bottom: 0;
     right: 0;
@@ -58,11 +58,11 @@
     height: 50px;
     width: 120px;
 }
-#pageNum{
+.pageNum{
 	color: #A3C245;
 	font-size: 20px;
 }
-#uploadPanel{
+.uploadPanel{
 	margin-bottom: 20px;
 	/*display: inline;*/
 }
