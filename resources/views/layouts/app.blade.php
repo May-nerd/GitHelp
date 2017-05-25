@@ -26,7 +26,7 @@
         ]) !!};
     </script>
     <script type="text/javascript" src="/js/js.js"></script>
-    <script type="text/javascript" src="/js/script.js"></script>
+    <script type="text/javascript" src="/js/CRUDscript.js"></script>
 </head>
 <body>
     <div id="app">
