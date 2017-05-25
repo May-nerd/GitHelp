@@ -14,11 +14,11 @@
                             <h2 class="text-center">Your lessons</h2>
                             @forelse(Auth::user()->creates as $lesson)
                                 <div>
-                                    <form class="form-delete" action="/lessons/{{$lesson->id}}" method="POST">
+                                    {{ $lesson->title }}
+                                    <form action="/lessons/{{$lesson->id}}" method="post">
                                         {{ csrf_field() }}
-                                        {{ method_field('DELETE') }}
-                                        {{ $lesson->title }}
-                                        <input type="submit" name="delete" value="&times;" id="delete" class="btn btn-danger" />
+                                        {{method_field('DELETE')}}
+                                        <input type="submit" class="btn btn-danger" value="Delete"/>
                                     </form>
                                 </div>
                                 <hr />
