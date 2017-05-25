@@ -19,6 +19,39 @@
                             </div>
                         </div>
                     </div>
+                    <!-- This is hidden because of this is template for new pages -->
+                    <div id="page0" hidden class="page panel panel-default custom-sub-panel" style="display: none;">
+                        <div class="panel-heading custom-heading">
+                            <div class="col-md-6 pull-left center-block">
+                                <input type="text" class="form-control custom-sub-form" name="page_title[]" placeholder="Provide a Page Title" />
+                            </div>
+                            <div class="input-group col-md-6 text-right">
+                                <button class="btn btn-default" title="Delete this Page" name="addPage"><span class="glyphicon glyphicon-trash"></span></button>
+                            </div>
+                        </div>
+                        <div class="panel-body custom-body">
+                            <p class="uploadPanel">
+                                {{--
+                                <!-- it looks nice, but there's no indication that a file has been uploaded
+                                    using unstyled upload button for usability purposes -->
+                                <label class="fileContainer btn btn-default">
+                                    <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image
+                                    <input type="file" name="image[]" class="btn btn-success"/>
+                                </label>
+                                --}}
+                                <label>
+                                    <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)
+                                    <input type="file" name="image[]" />
+                                </label>
+                            </p>
+                            <div class="input-group center-block">
+                              <textarea name="page_content[]" class="form-control textArea" placeholder="What is this page about?"></textarea>
+                            </div>
+                        </div>
+                        <div class="panel-footer text-right custom-footer">
+                            <label name="pageNumber" class="pageNum">1</label>
+                        </div>
+                    </div>
 
                     <div id="page1" class="page panel panel-default custom-sub-panel">
                         <div class="panel-heading custom-heading">
@@ -52,6 +85,7 @@
                             <label name="pageNumber" class="pageNum">1</label>
                         </div>
                     </div>
+
                 <input type="submit" name="submit" class="btn btn-success"/>
                 </div>
             </div>
