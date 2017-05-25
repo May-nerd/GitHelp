@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Auth;
+use App\Lesson;
+use App\Page;
 
 class LessonController extends Controller
 {
@@ -43,7 +45,32 @@ class LessonController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // TODO: validation
+
+        $lesson = new Lesson;
+
+        $lesson->user_id = Auth::id();
+        $lesson->title = $request->lesson_title;
+        $lesson->save();
+
+        $titles = $request->input('page_title');
+        $files = $request->input('image');
+        $contents = $request->input('page_content');
+
+        for ($i = 0; $i < count($titles); $i++) {
+            $page = new Page;
+            $page->page_number = $i + 1;
+            $page->lesson_id = $lesson->id;
+            $page->title = $titles[$i];
+            $page->content = $contents[$i];
+
+            // TODO: images
+
+            $page->save();
+        }
+
+        // TODO: redirect to show once that's implemented
+        return view('home');
     }
 
     /**
@@ -63,10 +90,9 @@ class LessonController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
         return view('lessons.edit_lesson');
-        //
     }
 
     /**

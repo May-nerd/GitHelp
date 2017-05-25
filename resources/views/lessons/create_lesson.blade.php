@@ -3,7 +3,10 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <form action="" method="">
+        <form action='/lessons' method='POST'>
+
+            {{ csrf_field() }}
+
             <div class="col-md-8 col-md-offset-2">
                 <!-- <h1>Create a Lesson for [Math]</h1> -->
 
@@ -12,7 +15,7 @@
                     <div class="panel panel-default custom-panel">
                         <div class="panel-body">
                             <div class="col-md-8 input-group center-block text-center">
-                                <input type="text" class="form-control text-center custom-form text-uppercase" name="title" placeholder="LESSON TITLE" />
+                                <input type="text" class="form-control text-center custom-form" name="lesson_title" placeholder="LESSON TITLE" />
                             </div>
                         </div>
                     </div>
@@ -20,7 +23,7 @@
                     <div class="panel panel-default custom-sub-panel">
                         <div class="panel-heading custom-heading">
                             <div class="col-md-6 pull-left center-block">
-                                <input type="text" class="form-control custom-sub-form" name="pageTitle" placeholder="Provide a Page Title" />
+                                <input type="text" class="form-control custom-sub-form" name="page_title[]" placeholder="Provide a Page Title" />
                             </div>
                             <div class="input-group col-md-6 text-right">
                                 <button class="btn btn-default" title="Delete this Page" name="addPage"><span class="glyphicon glyphicon-trash"></span></button>
@@ -30,12 +33,12 @@
                             <p class="uploadPanel">
                                 <label class="fileContainer btn btn-default">
                                     <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image
-                                    <input type="file" name="imgUpload" class="btn btn-success"/>
+                                    <input type="file" name="image[]" class="btn btn-success"/>
                                 </label>
-                                <strong>Upload an Image for this page (Optional)</strong>
+                                <strong>(Optional)</strong>
                             </p>
                             <div class="input-group center-block">
-                              <textarea name="pageContent" class="form-control textArea" placeholder="What is this page about?"></textarea>
+                              <textarea name="page_content[]" class="form-control textArea" placeholder="What is this page about?"></textarea>
                             </div>
                         </div>
                         <div class="panel-footer text-right custom-footer">
@@ -46,7 +49,7 @@
                     <div class="panel panel-default custom-sub-panel">
                         <div class="panel-heading custom-heading">
                             <div class="col-md-6 pull-left center-block">
-                                <input type="text" class="form-control custom-sub-form" name="pageTitle" placeholder="Provide a Page Title" />
+                                <input type="text" class="form-control custom-sub-form" name="page_title[]" placeholder="Provide a Page Title" />
                             </div>
                             <div class="input-group col-md-6 text-right">
                                 <button class="btn btn-default" title="Delete this Page" name="addPage"><span class="glyphicon glyphicon-trash"></span></button>
@@ -56,12 +59,12 @@
                             <p class="uploadPanel">
                                 <label class="fileContainer btn btn-default">
                                     <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image
-                                    <input type="file" name="imgUpload" class="btn btn-success"/>
+                                    <input type="file" name="image[]" class="btn btn-success"/>
                                 </label>
-                                <strong>Upload an Image for this page (Optional)</strong>
+                                <strong>(Optional)</strong>
                             </p>
                             <div class="input-group center-block">
-                              <textarea name="pageContent" class="form-control textArea" placeholder="What is this page about?"></textarea>
+                              <textarea name="page_content[]" class="form-control textArea" placeholder="What is this page about?"></textarea>
                             </div>
                         </div>
                         <div class="panel-footer text-right custom-footer">
