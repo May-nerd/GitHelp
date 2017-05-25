@@ -27,7 +27,7 @@
                                 <input type="text" class="form-control custom-sub-form" name="page_title[]" placeholder="Provide a Page Title" />
                             </div>
                             <div class="input-group col-md-6 text-right">
-                                <button type="button" class="btn btn-default" title="Delete this Page" name="addPage"><span class="glyphicon glyphicon-trash"></span></button>
+                                <button type="button" class="btn btn-default deletePage" title="Delete this Page" name="addPage"><span class="glyphicon glyphicon-trash"></span></button>
                             </div>
                         </div>
                         <div class="panel-body custom-body">
@@ -52,21 +52,9 @@
                         <div class="panel-footer text-right custom-footer">
                             <label name="pageNumber" class="pageNum">0</label>
                         </div>
-<!-- <<<<<<< HEAD -->
                         <div class="panel panel-default">
                             <div class="text-center input-gorup">
                                 <input type="text" class="form-control custom-tag-form" name="tags" placeholder="Tags" />
-<!-- =======
-                    </div>
-
-                    <div class="panel panel-default custom-sub-panel">
-                        <div class="panel-heading custom-heading">
-                            <div class="col-md-6 pull-left center-block">
-                                <input type="text" class="form-control custom-sub-form" name="page_title[]" placeholder="Provide a Page Title" />
-                            </div>
-                            <div class="input-group col-md-6 text-right">
-                                <button type="button" class="deletePage btn btn-default" title="Delete this Page" name="deletePage"><span class="glyphicon glyphicon-trash"></span></button>
->>>>>>> a31c9441a870ce954b6cf7fc9ecde39c6e6b6d3e -->
                             </div>
                         </div>
                     </div>
@@ -107,13 +95,8 @@
                 <input type="submit" name="submit" class="btn btn-success"/>
                 </div>
             </div>
+            <button type="button" class="addPage btn btn-primary pull-right addPgBtn" title="Add another Page" name="addPage"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add a Page</button>
         </form>
-<!-- <<<<<<< HEAD -->
-         <button class="addPage btn btn-primary pull-right addPgBtn" title="Add another Page" name="addPage"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add a Page</button>
-<!-- =======
-        <button class="btn btn-primary pull-right addPgBtn" title="Add another Page" name="addPage"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add a Page</button>
-
->>>>>>> a31c9441a870ce954b6cf7fc9ecde39c6e6b6d3e -->
     </div>
 </div>
 
