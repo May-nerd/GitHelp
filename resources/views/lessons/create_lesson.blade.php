@@ -20,7 +20,7 @@
                         </div>
                     </div>
 
-                    <div class="panel panel-default custom-sub-panel">
+                    <div id="page1" class="page panel panel-default custom-sub-panel">
                         <div class="panel-heading custom-heading">
                             <div class="col-md-6 pull-left center-block">
                                 <input type="text" class="form-control custom-sub-form" name="page_title[]" placeholder="Provide a Page Title" />
@@ -53,7 +53,7 @@
                         </div>
                     </div>
 
-                    <div class="panel panel-default custom-sub-panel">
+<!--                     <div id="page2" class="page panel panel-default custom-sub-panel">
                         <div class="panel-heading custom-heading">
                             <div class="col-md-6 pull-left center-block">
                                 <input type="text" class="form-control custom-sub-form" name="page_title[]" placeholder="Provide a Page Title" />
@@ -76,15 +76,15 @@
                         <div class="panel-footer text-right custom-footer">
                             <label class="pageNum">2</label>
                         </div>
-                    </div>
+                    </div> -->
 
                 <input type="submit" name="submit" class="btn btn-success"/>
                 </div>
             </div>
 
-            <button class="btn btn-primary pull-right addPgBtn" title="Add another Page" name="addPage"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add a Page</button>
-
+           <!--  <button class="btn btn-primary pull-right addPgBtn" title="Add another Page" name="addPage"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add a Page</button> -->
         </form>
+          <button class="addPage btn btn-primary pull-right addPgBtn" title="Add another Page" name="addPage"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add a Page</button>
     </div>
 </div>
 
