@@ -27,7 +27,6 @@ function deletePage() {
 
 /* WHAT IS DIS BLSHT - AGENT P " ONE SPAGHETTI COMING UP"*/
 function validate(){
-	console.log("heu");
 	pagesContent = document.getElementsByName("page_content[]");
 	pagesTitle = document.getElementsByName("page_title[]");
 	warningContent = document.getElementsByName("warning_content[]");
