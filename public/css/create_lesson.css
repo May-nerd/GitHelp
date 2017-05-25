@@ -14,7 +14,13 @@
 	border-right: 1px solid rgba(128,128,128, 0.2);
 	box-shadow: none;
 }
-
+.custom-tag-form{
+	border: 1px solid #d6ff5a;
+	box-shadow: none;
+}
+.custom-tag-form:focus{
+	border: 2px solid #d6ff5a;
+}
 
 .custom-form{
 	box-shadow: none !important;
