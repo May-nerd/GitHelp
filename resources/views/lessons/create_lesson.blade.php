@@ -49,7 +49,7 @@
                             </div>
                         </div>
                         <div class="panel-footer text-right custom-footer">
-                            <label class="pageNum">1</label>
+                            <label name="pageNumber" class="pageNum">1</label>
                         </div>
                     </div>
                 <input type="submit" name="submit" class="btn btn-success"/>
