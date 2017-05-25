@@ -6,50 +6,49 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Read;
 use Auth;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\MessageBag;
+use Illuminate\Support\Facades\Input;
 
 class ProfileController extends Controller
 {
-     public function index()
-    {
-        //
+
+
+    public function show($username){
+    	$user = User::whereUsername($username)->first();
+    	$lessons = $user->reads;
+
+    	return view('user.profile', compact(['user', 'lessons']));
     }
     
-    public function profile($username){
-    	$user = User::whereUsername($username)->first();
-    	
-        $lessons = $user->reads;
-        
-        $me = Auth::user();
-        
-        $isSubscribed = !$me->is_Subscribed($user);
-    	return view('user.profile', compact(['user', 'lessons', 'isSubscribed']));
-    }
-    
-
-    // public function edit($username){
-
-    //     if(Auth::check() && Auth::user()->username == $username){
-    //         $user = User::whereUsername($username)->first();
-
-
-    public function edit($username){
-    	$user = User::whereUsername($username)->first();
+    public function edit(){
+    	$user = User::whereUsername(Auth::user()->username)->first();
     	return view('user.edit',compact('user'));
-
     }
 
-    public function update(Request $request, $username){
-    	$user = User::whereUsername($username)->first();
-    	$password= $request->password;
-    	$confpassword= $request->confpassword;
 
+    public function index($username){
+        $user = User::whereUsername($username)->first();
+        $lessons = $user->reads;
+
+        return view('user.profile', compact(['user', 'lessons']));
+    }
+
+    public function update(Request $request, $profile){
+
+    	$user = User::whereUsername($profile)->first();
+    	$password = bcrypt($request->password);
     	foreach($request as $key=>$value){
-    		if($value=="")
-    			$value = $user[$key];
-    		if($key == "password" && $value != "")
-    			$request->merge(array('password'=>bcrypt($request->password)));
+    		if($value == ""){
+                $value = $user[$key];
+            }
+    		// if($key == "password" && $value != ""){
+      //           $request->user()->fill(['password'=>$password])->save();
+      //           //$request->user()->fill(['password'=>$pass]);
+      //       }
     	}
     	$user->update($request->all());
+<<<<<<< HEAD
     	return redirect('/profile/'.$username);
     }
 
@@ -64,6 +63,7 @@ class ProfileController extends Controller
         ], $messages);
 
         return $validator;
+        
     }
        public function subscribe($username){
  
@@ -89,5 +89,11 @@ class ProfileController extends Controller
         $me->subscribing()->detach($user->id);
         
         return redirect('/profile/' . $username);
+=======
+        $request->user()->fill(['password'=>$password])->save();
+        $lessons = $user->reads;
+    	return view('user.profile', compact(['user', 'lessons']));
+>>>>>>> 513611bda35e601640cd28418a8350c2ba099e3f
     }
+    
 }

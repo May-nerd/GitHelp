@@ -85,7 +85,7 @@
                                         <a href="/profile/{{ Auth::user()->username }}">My Profile</a>
                                     </li>
                                     <li>
-                                        <a href="/profile/edit/{{ Auth::user()->username }}">Profile Settings</a>
+                                        <a href="/profile/{{ Auth::user()->username }}/edit">Profile Settings</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('logout') }}"

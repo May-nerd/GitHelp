@@ -21,10 +21,9 @@
                 @endif
                 
                  @if(Auth::id() === $user->id)
-                        <a class="btn btn-info btn-sm" href=""><span class="glyphicon glyphicon-bell"></span>Notifications</a>
+                        <a class="btn btn-info btn-sm" href="{{ url('/notification/')}}"><span class="glyphicon glyphicon-bell"></span>Notifications</a>
 			     @endif
             </div>
-			
 			<div class="panel-heading">
 				<h4>Lessons Read</h4>
 			</div>

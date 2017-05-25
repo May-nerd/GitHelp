@@ -16,8 +16,7 @@
                         <div class="panel-body">
                             <div class="col-md-8 input-group center-block text-center">
                                 <input id="lesson_title" type="text" class="form-control text-center custom-form" name="lesson_title" placeholder="LESSON TITLE" />
-                                 <!-- AGENT P NEEDS FRONT END HELP HERE -->
-                                <p id="warning_lesson_title" class="text-warning" style="color: red; font-size: 15px; display: none;"> Lesson title cannot be blank </p>
+                                 <p id="warning_lesson_title" class="text-warning" style="color: red; font-size: 15px; display: none;"> *Lesson Title is required </p>
                             </div>
                         </div>
                     </div>
@@ -113,7 +112,7 @@
                     </div>
 
                 <!-- <input type="submit" name="submit" class="btn btn-success"/> -->
-                <button type="submit" name="submit" class="btn submitLesson btn-success"> Submit </button>
+                <button type="button" name="submit" class="btn submitLesson btn-success"> Submit </button>
                 </div>
             </div>
             <button type="button" class="addPage btn btn-primary pull-right addPgBtn" title="Add another Page" name="addPage"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add a Page</button>
