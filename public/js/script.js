@@ -2,7 +2,7 @@ $(document).ready(function(){
 	$(document).on("click", ".addPage", addPage);
 });
 
-/* PWNED BY AGENT PROXY "SERVING YOU SPAGHETTI CODE SINCE 2014" */
+/* PWNED BY AGENT PROXY "SERVING YOU SPAGHETTI CODE SINCE 2014 FIXED NA PLESSSS" */
 function addPage(){
 
 	i = document.getElementsByClassName('page');
