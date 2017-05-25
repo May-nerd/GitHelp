@@ -10,7 +10,8 @@ function addPage(){
 	$('#page0').clone().attr('id','page'+(i.length)).insertAfter('#page' + (i.length- 1));
 	document.getElementById("page" + (i.length-1)).style.display = "block";
 	node = document.getElementById("page" + (i.length-1));
-	node.lastChild.previousSibling.previousSibling.firstChild.innerHTML = i.length-1;
+	// console.log(node.lastChild.textContent);
+	node.lastChild.innerHTML = i.length-1;
 	
 }
 // doesn't have to have a query since it won't be submitted int the first place - リン
@@ -23,7 +24,7 @@ function deletePage() {
 
 	for(x=1;x<pages.length;x++){
 		pages[x].id = "page" + x;
-		pages[x].lastChild.previousSibling.previousSibling.firstChild.innerHTML = x;
+		pages[x].lastChild.innerHTML = x;
 		// pages[x].innerHTML = x;
 	}
 
