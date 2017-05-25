@@ -6,7 +6,6 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
-
                 <div class="panel-body">
                     <h1 class="text-center">Welcome, dear {{ Auth::user()->role }}!</h1>
                     @if(Auth::user()->role == 'teacher')
@@ -19,7 +18,6 @@
                                     <button class="btn btn-danger" data-toggle="modal" data-target="#deleteLesson">Delete</button>
                                 </div>
                                 <hr />
-
                             <div class="modal fade" id="deleteLesson" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -50,6 +48,4 @@
         </div>
     </div>
 </div>
-
-
 @endsection
