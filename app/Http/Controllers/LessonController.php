@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use Auth;
 use App\Lesson;
-use App\Lessoncategory;
+use App\Lessoncategories;
 use App\Lessontags;
 use App\Page;
 use App\Comments;
@@ -135,8 +135,7 @@ class LessonController extends Controller
         $lessonreads = Reads::where('lesson_id','=',$id)->delete();
         $lessoncomms = Comments::where('lesson_id','=',$id)->delete();
         $lessontag = Lessontags::where('lesson_id','=',$id)->delete();
-
-        $lessoncat = Lessoncategory::where('lesson_id','=',$id)->delete();
+        $lessoncat = Lessoncategories::where('lesson_id','=',$id)->delete();
         $lesson = Lesson::findOrFail($id);
         $lesson->delete();
 
