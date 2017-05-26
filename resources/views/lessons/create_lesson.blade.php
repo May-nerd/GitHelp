@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <form action='/lessons' method='POST'>
+        <form action="{{ url('lessons') }}" enctype="multipart/form-data" method="POST">
 
             {{ csrf_field() }}
 
@@ -31,11 +31,18 @@
                         </div>
                         <div class="panel-body custom-body">
                             <p class="uploadPanel">
+                                {{--
+                                <!-- it looks nice, but there's no indication that a file has been uploaded
+                                    using unstyled upload button for usability purposes -->
                                 <label class="fileContainer btn btn-default">
                                     <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image
                                     <input type="file" name="image[]" class="btn btn-success"/>
                                 </label>
-                                <strong>(Optional)</strong>
+                                --}}
+                                <label>
+                                    <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)
+                                    <input type="file" name="image[]" />
+                                </label>
                             </p>
                             <div class="input-group center-block">
                               <textarea name="page_content[]" class="form-control textArea" placeholder="What is this page about?"></textarea>
@@ -57,11 +64,10 @@
                         </div>
                         <div class="panel-body custom-body">
                             <p class="uploadPanel">
-                                <label class="fileContainer btn btn-default">
-                                    <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image
-                                    <input type="file" name="image[]" class="btn btn-success"/>
+                                <label>
+                                    <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)
+                                    <input type="file" name="image[]" />
                                 </label>
-                                <strong>(Optional)</strong>
                             </p>
                             <div class="input-group center-block">
                               <textarea name="page_content[]" class="form-control textArea" placeholder="What is this page about?"></textarea>

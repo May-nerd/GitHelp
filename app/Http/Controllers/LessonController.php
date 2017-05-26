@@ -53,9 +53,9 @@ class LessonController extends Controller
         $lesson->title = $request->lesson_title;
         $lesson->save();
 
-        $titles = $request->input('page_title');
-        $files = $request->input('image');
-        $contents = $request->input('page_content');
+        $titles = $request->input('page_title.*');
+        $files = $request->file('image.*');
+        $contents = $request->input('page_content.*');
 
         for ($i = 0; $i < count($titles); $i++) {
             $page = new Page;
@@ -64,7 +64,17 @@ class LessonController extends Controller
             $page->title = $titles[$i];
             $page->content = $contents[$i];
 
-            // TODO: images
+            // create unique filename. save in public/uploads
+            if (!is_null($files[$i])) {
+                // check if file exists already, just in case
+                $filename = uniqid(null, true) . '-' . $files[$i]->getClientOriginalName();
+                while (file_exists(public_path('uploads') . '/' . $filename)) {
+                    $filename = uniqid(null, true) . '-' . $files[$i]->getClientOriginalName();
+                }
+
+                $files[$i]->move(public_path('uploads'), $filename);
+                $page->image = $filename;
+            }
 
             $page->save();
         }
