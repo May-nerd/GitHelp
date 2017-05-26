@@ -1,3 +1,8 @@
+@font-face{
+	font-family: Roboto;
+	src: url('custom_fonts/Roboto-Regular.ttf');
+}
+
 .navbar-default{
 	border: 0;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
