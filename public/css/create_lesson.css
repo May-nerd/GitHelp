@@ -1,3 +1,8 @@
+@font-face{
+	font-family: Roboto;
+	src: url('custom_fonts/Roboto-Regular.ttf');
+}
+
 .custom-panel{
 	box-shadow: none;
 }
