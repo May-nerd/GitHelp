@@ -62,18 +62,19 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li>
-                                <form class="navbar-form navbar-right">
                                 <div id="navbar-form-group search-input">
+                                    <form action="/search" method="POST" role="search" class="navbar-form navbar-right">
+                                        {{ csrf_field() }}
                                         <div class="input-group">
-                                            <input type="text" class="search-query form-control" placeholder=" Search..." />
-                                            <span class="input-group-btn">
-                                                <button class="btn btn-success" type="button">
-                                                <span class=" glyphicon glyphicon-search"></span>
+                                            <input type="text" class="form-control search-query" name="search"
+                                                placeholder="Search..."> <span class="input-group-btn">
+                                                <button type="submit"  class="btn btn-success">
+                                                    <span class="glyphicon glyphicon-search"></span>
                                                 </button>
                                             </span>
                                         </div>
-                                    </div>
-                              </form>
+                                    </form>
+                                </div>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

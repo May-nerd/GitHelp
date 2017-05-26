@@ -35,20 +35,26 @@ class ProfileController extends Controller
     }
 
     public function update(Request $request, $profile){
-
+        if($profile != Auth::user()->username){
+            $profile = Auth::user()->username;
+        }
     	$user = User::whereUsername($profile)->first();
-    	$password = bcrypt($request->password);
+    	$password = $request->password;
+        if (empty($password)){
+            $password = $user->password;
+        }else{
+            $password = bcrypt($password);
+        }
+        
     	foreach($request as $key=>$value){
     		if($value == ""){
                 $value = $user[$key];
             }
-    		// if($key == "password" && $value != ""){
-      //           $request->user()->fill(['password'=>$password])->save();
-      //           //$request->user()->fill(['password'=>$pass]);
-      //       }
     	}
-    	$user->update($request->all());
-<<<<<<< HEAD
+
+        $request->merge(array('password'=>$password));
+        $user->update($request->all());
+        $username = $user->username;
     	return redirect('/profile/'.$username);
     }
 
@@ -89,11 +95,8 @@ class ProfileController extends Controller
         $me->subscribing()->detach($user->id);
         
         return redirect('/profile/' . $username);
-=======
-        $request->user()->fill(['password'=>$password])->save();
         $lessons = $user->reads;
     	return view('user.profile', compact(['user', 'lessons']));
->>>>>>> 513611bda35e601640cd28418a8350c2ba099e3f
     }
     
 }

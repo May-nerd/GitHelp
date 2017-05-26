@@ -62,12 +62,6 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="password-confirm" class="col-md-4 control-label">Confirm New Password</label>
-                        <div class="col-md-6">
-                            <input id="password-confirm" type="password" class="form-control" name="password-confirm"/>
-                        </div>
-                    </div>
-                    <div class="form-group">
                         <div class="col-md-6 col-md-offset-4">
                             <input class="btn btn-primary" type="submit" name="submit" value="Save Changes" />
                         </div>
