@@ -24,7 +24,7 @@ class LessonController extends Controller
      */
     public function index()
     {
-        //
+        return view('');
     }
 
     /**
@@ -91,7 +91,10 @@ class LessonController extends Controller
      */
     public function show($id)
     {
-        //
+        $lessons = Lesson::find($id);
+        $pages = Page::where('lesson_id','=',$id)->get();
+
+        return view('lessons.view_lesson', compact('lessons', 'pages'));
     }
 
     /**
@@ -126,5 +129,10 @@ class LessonController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getPage($lesson_id, $page_number)
+    {
+        return Page::where('lesson_id','=',$lesson_id)->where('page_number','=',$page_number)->get();
     }
 }
