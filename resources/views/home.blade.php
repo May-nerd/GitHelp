@@ -14,7 +14,7 @@
                             <h2 class="text-center">Your lessons</h2>
                             @forelse(Auth::user()->creates as $lesson)
                                 <div>
-                                    <form class="form-delete" action="/home" method="POST">
+                                    <form class="form-delete" action="/lessons/{{$lesson->id}}" method="POST">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
                                         {{ $lesson->title }}
