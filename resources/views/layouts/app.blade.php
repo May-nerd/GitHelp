@@ -15,6 +15,7 @@
     <link href="{{ asset('css/custom_bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('css/form.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/search.css') }}" rel="stylesheet">
     @stack('styles')
     <link href="{{ asset('css/autofill_handler.css') }}" rel="stylesheet">
 
@@ -48,6 +49,18 @@
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                    <form class="navbar-form navbar-middle">
+                        <div id="navbar-form-group search-input">
+                                <div class="input-group">
+                                    <input type="text" class="search-query form-control" placeholder=" Search..." />
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-success" type="button">
+                                        <span class=" glyphicon glyphicon-search"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                      </form>
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
