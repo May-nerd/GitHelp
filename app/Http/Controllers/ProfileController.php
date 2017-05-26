@@ -9,20 +9,12 @@ use Auth;
 
 class ProfileController extends Controller
 {
-     public function index()
-    {
-        //
-    }
-    
+
     public function profile($username){
     	$user = User::whereUsername($username)->first();
-    	
-        $lessons = $user->reads;
-        
-        $me = Auth::user();
-        
-        $isSubscribed = !$me->is_Subscribed($user);
-    	return view('user.profile', compact(['user', 'lessons', 'isSubscribed']));
+    	$lessons = $user->reads;
+
+    	return view('user.profile', compact(['user', 'lessons']));
     }
     
 
@@ -64,30 +56,5 @@ class ProfileController extends Controller
         ], $messages);
 
         return $validator;
-    }
-       public function subscribe($username){
- 
-         // get username of the profile ur on
-        $user = User::where('username', $username)->firstOrFail();
-        
-       
-        // get id of user and attach to me
-        $id = Auth::id();
-        $me = User::find($id);
-        $me->subscribing()->attach($user->id);
-        
-        return redirect('/profile/' . $username);
-    }
-
-    public function unsubscribe($username){
-    
-        // get username of the profile ur on
-        $user = User::where('username', $username)->firstOrFail();
-        
-        // delete user from me
-        $me = Auth::user();
-        $me->subscribing()->detach($user->id);
-        
-        return redirect('/profile/' . $username);
     }
 }

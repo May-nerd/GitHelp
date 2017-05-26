@@ -6,12 +6,7 @@ use Illuminate\Http\Request;
 
 use Auth;
 use App\Lesson;
-use App\Lessoncategories;
-use App\Lessontags;
 use App\Page;
-use App\Comments;
-use App\Reads;
-use App\Rates;
 
 class LessonController extends Controller
 {
@@ -29,7 +24,7 @@ class LessonController extends Controller
      */
     public function index()
     {
-        //
+        return view('');
     }
 
     /**
@@ -96,7 +91,10 @@ class LessonController extends Controller
      */
     public function show($id)
     {
-        //
+        $lessons = Lesson::find($id);
+        $pages = Page::where('lesson_id','=',$id)->get();
+
+        return view('lessons.view_lesson', compact('lessons', 'pages'));
     }
 
     /**
@@ -130,15 +128,11 @@ class LessonController extends Controller
      */
     public function destroy($id)
     {
-        $lessonrates = Rates::where('lesson_id','=',$id)->delete();
-        $lessonpages = Page::where('lesson_id','=',$id)->delete();
-        $lessonreads = Reads::where('lesson_id','=',$id)->delete();
-        $lessoncomms = Comments::where('lesson_id','=',$id)->delete();
-        $lessontag = Lessontags::where('lesson_id','=',$id)->delete();
-        $lessoncat = Lessoncategories::where('lesson_id','=',$id)->delete();
-        $lesson = Lesson::findOrFail($id);
-        $lesson->delete();
+        //
+    }
 
-        return redirect('/home');
+    public function getPage($lesson_id, $page_number)
+    {
+        return Page::where('lesson_id','=',$lesson_id)->where('page_number','=',$page_number)->get();
     }
 }

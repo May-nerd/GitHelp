@@ -20,34 +20,13 @@
                         </div>
                     </div>
 
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="input-group" id="main-tag">
-                                <label>
-                                    <p>Main Tag: </p>
-                                    <select name="main_tag" class="form-control">
-                                        <option>Math</option>
-                                        <option>MAPEH</option>
-                                        <option>Language</option>
-                                        <option>Science</option>
-                                        <option>Programming</option>
-                                    </select>   
-                                </label>                       
-                             </div>
-                             <div class="input-group col-md-12">
-                                <input type="text" class="form-control custom-tag-form" name="tags" placeholder="Tags" />
-                             </div>
-                        </div>
-                    </div>
-
-                    <!-- This is hidden because of this is template for new pages -->
-                    <div id="page0" class="page panel panel-default custom-sub-panel" style="display: none;">
+                    <div class="panel panel-default custom-sub-panel">
                         <div class="panel-heading custom-heading">
-                            <div class="col-md-6  center-block">
+                            <div class="col-md-6 pull-left center-block">
                                 <input type="text" class="form-control custom-sub-form" name="page_title[]" placeholder="Provide a Page Title" />
                             </div>
                             <div class="input-group col-md-6 text-right">
-                                <button type="button" class="btn btn-default deletePage" title="Delete this Page" name="addPage"><span class="glyphicon glyphicon-trash"></span></button>
+                                <button class="btn btn-default" title="Delete this Page" name="addPage"><span class="glyphicon glyphicon-trash"></span></button>
                             </div>
                         </div>
                         <div class="panel-body custom-body">
@@ -55,42 +34,12 @@
                                 {{--
                                 <!-- it looks nice, but there's no indication that a file has been uploaded
                                     using unstyled upload button for usability purposes -->
-                               
-                                --}}
-                                 <label class="fileContainer btn btn-default">
-                                    <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)
-                                    <input type="file" name="image[]"/>
+                                <label class="fileContainer btn btn-default">
+                                    <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image
+                                    <input type="file" name="image[]" class="btn btn-success"/>
                                 </label>
-                            </p>
-                            <div class="input-group center-block">
-                              <textarea name="page_content[]" class="form-control textArea" placeholder="What is this page about?"></textarea>
-                            </div>
-                        </div>
-                        <div class="panel-footer text-right custom-footer">
-                            <label name="pageNumber" class="pageNum">0</label>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="text-center input-gorup">
-                                <input type="text" class="form-control custom-tag-form" name="tags" placeholder="Tags" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id= "page1" class="page panel panel-default custom-sub-panel">
-                        <div class="panel-heading custom-heading">
-                            <div class="col-md-6 pull-left center-block">
-                                <input type="text" class="form-control custom-sub-form" name="page_title[]" placeholder="Provide a Page Title" />
-                            </div>
-                            <div class="input-group col-md-6 text-right">
-                                <button type="button" class="deletePage btn btn-default" title="Delete this Page" name="deletePage"><span class="glyphicon glyphicon-trash"></span></button>
-                            </div>
-                        </div>
-                        <div class="panel-body custom-body">
-                            <p class="uploadPanel">
-                                {{--
-                         
                                 --}}
-                                <label  class="fileContainer btn btn-default">
+                                <label>
                                     <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)
                                     <input type="file" name="image[]" />
                                 </label>
@@ -100,19 +49,41 @@
                             </div>
                         </div>
                         <div class="panel-footer text-right custom-footer">
-                            <label name="pageNumber" class="pageNum">1</label>
+                            <label class="pageNum">1</label>
                         </div>
-                         <div class="panel panel-default">
-                            <div class="text-center input-gorup">
-                                <input type="text" class="form-control custom-tag-form" name="tags" placeholder="Tags" />
+                    </div>
+
+                    <div class="panel panel-default custom-sub-panel">
+                        <div class="panel-heading custom-heading">
+                            <div class="col-md-6 pull-left center-block">
+                                <input type="text" class="form-control custom-sub-form" name="page_title[]" placeholder="Provide a Page Title" />
                             </div>
+                            <div class="input-group col-md-6 text-right">
+                                <button class="btn btn-default" title="Delete this Page" name="addPage"><span class="glyphicon glyphicon-trash"></span></button>
+                            </div>
+                        </div>
+                        <div class="panel-body custom-body">
+                            <p class="uploadPanel">
+                                <label>
+                                    <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)
+                                    <input type="file" name="image[]" />
+                                </label>
+                            </p>
+                            <div class="input-group center-block">
+                              <textarea name="page_content[]" class="form-control textArea" placeholder="What is this page about?"></textarea>
+                            </div>
+                        </div>
+                        <div class="panel-footer text-right custom-footer">
+                            <label class="pageNum">2</label>
                         </div>
                     </div>
 
                 <input type="submit" name="submit" class="btn btn-success"/>
                 </div>
             </div>
-            <button type="button" class="addPage btn btn-primary pull-right addPgBtn" title="Add another Page" name="addPage"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add a Page</button>
+
+            <button class="btn btn-primary pull-right addPgBtn" title="Add another Page" name="addPage"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add a Page</button>
+
         </form>
     </div>
 </div>
