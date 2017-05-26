@@ -19,7 +19,7 @@ class CreatePagesTable extends Migration
             $table->integer('lesson_id')->unsigned();
             $table->string('title');
             $table->mediumText('content');
-            $table->boolean('has_image');
+            $table->string('image')->nullable();
             $table->timestamps();
 
             $table->foreign('lesson_id')->references('id')->on('lessons');

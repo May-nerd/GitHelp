@@ -1,10 +1,15 @@
+@font-face{
+	font-family: Roboto;
+	src: url('custom_fonts/Roboto-Regular.ttf');
+}
+
 .navbar-default{
 	border: 0;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	font-family: Roboto;
 }
 
-.btn{
+:not(.input-group-btn) > .btn{
 	border-radius: 2em;
 	font-family: Roboto;	
 	border: 0;
@@ -72,3 +77,11 @@
 	box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2), 0 0 0 rgba(0, 0, 0, 0.2);
 }
 
+/* Prevent navbar overlapping content
+ * sorry if this isn't the right file
+ */
+@media (min-width: 980px) {
+    body {
+        padding-top: 60px;
+    }
+}
