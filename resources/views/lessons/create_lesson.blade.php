@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <form action="{{ url('lessons') }}" enctype="multipart/form-data" method="POST">
+        <form id="form" action="{{ url('lessons') }}" enctype="multipart/form-data" method="POST">
 
             {{ csrf_field() }}
 
@@ -15,18 +15,42 @@
                     <div class="panel panel-default custom-panel">
                         <div class="panel-body">
                             <div class="col-md-8 input-group center-block text-center">
-                                <input type="text" class="form-control text-center custom-form" name="lesson_title" placeholder="LESSON TITLE" />
+                                <input id="lesson_title" type="text" class="form-control text-center custom-form" name="lesson_title" placeholder="LESSON TITLE" />
+                                 <p id="warning_lesson_title" class="text-warning" style="color: red; font-size: 15px; display: none;"> *Lesson Title is required </p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="panel panel-default custom-sub-panel">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="input-group" id="main-tag">
+                                <label>
+                                    <p>Main Tag: </p>
+                                    <select name="main_tag" class="form-control">
+                                        <option>Math</option>
+                                        <option>MAPEH</option>
+                                        <option>Language</option>
+                                        <option>Science</option>
+                                        <option>Programming</option>
+                                    </select>   
+                                </label>                       
+                             </div>
+                             <div class="input-group col-md-12">
+                                <input type="text" class="form-control custom-tag-form" name="tags" placeholder="Tags" />
+                             </div>
+                        </div>
+                    </div>
+
+                    <!-- This is hidden because of this is template for new pages -->
+                    <div id="page0" class="page panel panel-default custom-sub-panel" style="display: none;">
                         <div class="panel-heading custom-heading">
-                            <div class="col-md-6 pull-left center-block">
+                            <div class="col-md-6  center-block">
                                 <input type="text" class="form-control custom-sub-form" name="page_title[]" placeholder="Provide a Page Title" />
                             </div>
+                            <!-- AGENT P NEEDS FRONT END HELP HERE -->
+                             <p name="warning_title[]" class="text-warning" style="color: red; font-size: 15px; display: none;"> *Title Required </p>
                             <div class="input-group col-md-6 text-right">
-                                <button class="btn btn-default" title="Delete this Page" name="addPage"><span class="glyphicon glyphicon-trash"></span></button>
+                                <button type="button" class="btn btn-default deletePage" title="Delete this Page" name="addPage"><span class="glyphicon glyphicon-trash"></span></button>
                             </div>
                         </div>
                         <div class="panel-body custom-body">
@@ -34,64 +58,64 @@
                                 {{--
                                 <!-- it looks nice, but there's no indication that a file has been uploaded
                                     using unstyled upload button for usability purposes -->
-                                <label class="fileContainer btn btn-default">
-                                    <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image
-                                    <input type="file" name="image[]" class="btn btn-success"/>
-                                </label>
+                               
                                 --}}
-                                <label>
+                                 <label class="fileContainer btn btn-default">
                                     <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)
-                                    <input type="file" name="image[]" />
+                                    <input type="file" name="image[]"/>
+                                    <p name="warning_image[]" class="text-warning" style="color: red; font-size: 15px; display: none;"> *Can only accept .jpeg, .jpg, or .png </p>
                                 </label>
                             </p>
+                            <!-- AGENT P NEEDS FRONT END HELP HERE -->
+                            <p name="warning_content[]" class="text-warning" style="color: red; font-size: 15px; display: none;"> *Content Required </p>
                             <div class="input-group center-block">
                               <textarea name="page_content[]" class="form-control textArea" placeholder="What is this page about?"></textarea>
                             </div>
                         </div>
                         <div class="panel-footer text-right custom-footer">
-<<<<<<< HEAD
-                            <label class="pageNum">1</label>
-=======
                             <label name="pageNumber" class="pageNum">0</label>
->>>>>>> 09f256308e62e15f475ec13644df5bf8fe14c2f0
                         </div>
                     </div>
 
-                    <div class="panel panel-default custom-sub-panel">
+                    <div id= "page1" class="page panel panel-default custom-sub-panel">
                         <div class="panel-heading custom-heading">
                             <div class="col-md-6 pull-left center-block">
                                 <input type="text" class="form-control custom-sub-form" name="page_title[]" placeholder="Provide a Page Title" />
                             </div>
+                            <!-- AGENT P NEEDS FRONT END HELP HERE -->
+                             <p name="warning_title[]" class="text-warning" style="color: red; font-size: 15px; display: none;"> *Title Required </p>
                             <div class="input-group col-md-6 text-right">
-                                <button class="btn btn-default" title="Delete this Page" name="addPage"><span class="glyphicon glyphicon-trash"></span></button>
+                               <!-- AGENT P NEEDS FRONT END HELP HERE -->
+                                <button type="button" class="deletePage btn btn-default" title="Delete this Page" name="deletePage" style="visibility: hidden"><span class="glyphicon glyphicon-trash"></span></button>
                             </div>
                         </div>
                         <div class="panel-body custom-body">
                             <p class="uploadPanel">
-                                <label>
+                                {{--
+                         
+                                --}}
+                                <label  class="fileContainer btn btn-default">
                                     <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)
                                     <input type="file" name="image[]" />
+                                    <p name="warning_image[]" class="text-warning" style="color: red; font-size: 15px; display: none;"> *Can only accept .jpeg, .jpg, or .png </p>
                                 </label>
                             </p>
+                            <!-- AGENT P NEEDS FRONT END HELP HERE -->
+                            <p name="warning_content[]" class="text-warning" style="color: red; font-size: 15px; display: none;"> *Content Required </p>
                             <div class="input-group center-block">
                               <textarea name="page_content[]" class="form-control textArea" placeholder="What is this page about?"></textarea>
                             </div>
                         </div>
                         <div class="panel-footer text-right custom-footer">
-<<<<<<< HEAD
-                            <label class="pageNum">2</label>
-=======
                             <label name="pageNumber" class="pageNum">1</label>
->>>>>>> 09f256308e62e15f475ec13644df5bf8fe14c2f0
                         </div>
                     </div>
 
-                <input type="submit" name="submit" class="btn btn-success"/>
+                <!-- <input type="submit" name="submit" class="btn btn-success"/> -->
+                <button type="button" name="submit" class="btn submitLesson btn-success"> Submit </button>
                 </div>
             </div>
-
-            <button class="btn btn-primary pull-right addPgBtn" title="Add another Page" name="addPage"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add a Page</button>
-
+            <button type="button" class="addPage btn btn-primary pull-right addPgBtn" title="Add another Page" name="addPage"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add a Page</button>
         </form>
     </div>
 </div>

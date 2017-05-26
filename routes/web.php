@@ -37,6 +37,9 @@ Route::get('search', function(){ return view('content/search'); });
 
 Route::resource('/lessons', 'LessonController');
 
+
+
+
 Route::group(['middleware' => 'auth'], function(){
 	
 	Route::get('/home', 'HomeController@index');
@@ -51,8 +54,20 @@ Route::group(['middleware' => 'auth'], function(){
 // =======
 	Route::get('/profile/{username}', 'ProfileController@profile');
 
+// <<<<<<< HEAD
+    
+    
+    Route::get('/profile/{username}/subscribes', 'ProfileController@subscribe');
+    Route::get('/profile/{username}/unsubscribes', 'ProfileController@unsubscribe');
 	Route::get('/profile/edit/{username}', 'ProfileController@edit');
 	Route::resource('/profile', 'ProfileController');
+    
+    Route::resource('/notification', 'NotifsController');
+// });
+// =======
+	Route::get('/profile/edit/{username}', 'ProfileController@edit');
+	Route::resource('/profile', 'ProfileController');
+// >>>>>>> 513611bda35e601640cd28418a8350c2ba099e3f
 
 	Route::get('/getlessons/{lesson_id}/{page_number}', 'LessonController@getPage');
 
