@@ -30,6 +30,8 @@ Route::get('subjects', function(){ return view('content/subject'); });
 Route::get('categories', function(){ return view('content/category'); });
 Route::get('search', function(){ return view('content/search'); });
 
+Route::any( '/search', 'SearchController@search_result');
+
 // ======================================
 
 // do NOT include in Route::group
