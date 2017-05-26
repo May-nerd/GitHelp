@@ -36,14 +36,21 @@ Route::get('search', function(){
 // LessonController already handles middleware
 Route::resource('/lessons', 'LessonController');
 
+
+
+
 Route::group(['middleware' => 'auth'], function(){
 	
 	Route::get('/home', 'HomeController@index');
 	Route::get('/profile/{username}', 'ProfileController@profile');
 
+    
+    
     Route::get('/profile/{username}/subscribes', 'ProfileController@subscribe');
     Route::get('/profile/{username}/unsubscribes', 'ProfileController@unsubscribe');
 	Route::get('/profile/edit/{username}', 'ProfileController@edit');
 	Route::resource('/profile', 'ProfileController');
+    
+    Route::resource('/notification', 'NotifsController');
 });
 

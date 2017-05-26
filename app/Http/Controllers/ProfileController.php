@@ -64,6 +64,7 @@ class ProfileController extends Controller
         ], $messages);
 
         return $validator;
+        
     }
        public function subscribe($username){
  
@@ -90,4 +91,5 @@ class ProfileController extends Controller
         
         return redirect('/profile/' . $username);
     }
+    
 }
