@@ -12,12 +12,9 @@ function addPage(){
 	page_numbers = document.getElementsByName("pageNumber");
 	page_numbers[i.length-1].innerHTML = i.length-1;
 }
+// doesn't have to have a query since it won't be submitted int the first place - リン
 function deletePage() {
-	page = document.getElementsByClassName('page');
 
-	console.log("delete");
-
-
-	// $(this).parent().parent().parent().parent().remove();
+	$(this).parent().parent().parent().remove();
 
 }
