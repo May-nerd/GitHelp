@@ -52,6 +52,7 @@ class ProfileController extends Controller
 
         $request->merge(array('password'=>$password));
         $user->update($request->all());
+        $username = $user->username;
     	return redirect('/profile/'.$username);
     }
 
