@@ -35,7 +35,9 @@ class ProfileController extends Controller
     }
 
     public function update(Request $request, $profile){
-
+        if($profile != Auth::user()->username){
+            $profile = Auth::user()->username;
+        }
     	$user = User::whereUsername($profile)->first();
     	$password = $request->password;
         if (empty($password)){
