@@ -24,7 +24,6 @@
                         <a class="btn btn-info btn-sm" href="{{ url('/notification/')}}"><span class="glyphicon glyphicon-bell"></span>Notifications</a>
 			     @endif
             </div>
-			
 			<div class="panel-heading">
 				<h4>Lessons Read</h4>
 			</div>

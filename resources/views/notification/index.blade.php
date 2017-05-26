@@ -22,15 +22,8 @@
              
             </div>
         </div>
-
-         
-         
          <p class="text-center">No Notifications Found</p>
     </div>
-
-     
-     
-
 </div>
 
 @endsection
