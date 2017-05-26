@@ -15,6 +15,11 @@
                             @forelse(Auth::user()->creates as $lesson)
                                 <div>
                                     {{ $lesson->title }}
+                                    <form action="/lessons/{{$lesson->id}}" method="post">
+                                        {{ csrf_field() }}
+                                        {{method_field('DELETE')}}
+                                        <input type="submit" class="btn btn-danger" value="Delete"/>
+                                    </form>
                                 </div>
                                 <hr />
                             @empty

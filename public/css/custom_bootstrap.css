@@ -9,12 +9,6 @@
 	font-family: Roboto;
 }
 
-.navbar-middle {
-	position: absolute;
-	left: 50%;
-	transform: translate(-50%, 0);
-}
-
 :not(.input-group-btn) > .btn{
 	border-radius: 2em;
 	font-family: Roboto;	

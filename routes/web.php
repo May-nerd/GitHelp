@@ -29,6 +29,7 @@ Route::get('search', function(){
 	return view('content/search');
 });
 
+
 // ======================================
 
 // do NOT include in Route::group

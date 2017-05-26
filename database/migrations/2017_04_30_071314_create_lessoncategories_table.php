@@ -13,7 +13,7 @@ class CreateLessoncategoryTable extends Migration
      */
     public function up()
     {
-        Schema::create('lessoncategory', function (Blueprint $table) {
+        Schema::create('lessoncategories', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('lesson_id')->unsigned();
             $table->integer('mainlesson_id')->unsigned();
@@ -31,6 +31,6 @@ class CreateLessoncategoryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lessoncategory');
+        Schema::dropIfExists('lessoncategories');
     }
 }
