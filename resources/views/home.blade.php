@@ -8,16 +8,8 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    <h1 class="text-center">Welcome, dear
-                    @if(Auth::user()->role == 1)
-                        student
-                    @elseif(Auth::user()->role == 2)
-                        teacher
-                    @else
-                        admin
-                    @endif
-                    !</h1>
-                    @if(Auth::user()->role == 2)
+                    <h1 class="text-center">Welcome, dear {{ Auth::user()->role }}!</h1>
+                    @if(Auth::user()->role == 'teacher')
                         <div>
                             <h2 class="text-center">Your lessons</h2>
                             @forelse(Auth::user()->creates as $lesson)

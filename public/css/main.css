@@ -11,6 +11,11 @@ Colors Used:
 	src: url('custom_fonts/Typo_Round_Regular_Demo.otf');
 }
 
+@font-face{
+	font-family: Roboto;
+	src: url('custom_fonts/Roboto-Regular.ttf');
+}
+
 .git{
 	font-family: round;
 	color: #d6ff5a;
