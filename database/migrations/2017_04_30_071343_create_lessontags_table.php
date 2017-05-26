@@ -14,9 +14,13 @@ class CreateLessontagsTable extends Migration
     public function up()
     {
         Schema::create('lessontags', function (Blueprint $table) {
-            $table->integer('lesson_id');
-            $table->integer('tag_id');
+            $table->increments('id');
+            $table->integer('lesson_id')->unsigned();
+            $table->integer('tag_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('lesson_id')->references('id')->on('lessons');
+            $table->foreign('tag_id')->references('id')->on('tags');
         });
     }
 

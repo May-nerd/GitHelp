@@ -9,6 +9,7 @@
                 <h2 class="text-center git">Git</h2>
             </div>
         </div>
+
         <div class="col-md-4 right-panel">
             <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}" autocomplete="off">
                         {{ csrf_field() }}

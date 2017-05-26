@@ -19,12 +19,22 @@ Route::get('profile', function(){
 	return view('user/profile');
 });
 
+
 Auth::routes();
 
+// ============STATIC VIEW ==============
+Route::get('/create_lesson_plan', 'LessonController@create');
+Route::get('/edit_lesson_plan/', 'LessonController@edit');
+// ======================================
+
+// do NOT include in Route::group
+// LessonController already handles middleware
+Route::resource('/lessons', 'LessonController');
+
 Route::group(['middleware' => 'auth'], function(){
+	
 	Route::get('/home', 'HomeController@index');
 	Route::get('/profile/{username}', 'ProfileController@profile');
-
 
 
 	Route::get('/profile/edit/{username}', 'ProfileController@edit');

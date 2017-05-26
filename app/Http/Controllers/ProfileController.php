@@ -18,21 +18,16 @@ class ProfileController extends Controller
     }
     
 
-    public function edit($username){
+    // public function edit($username){
 
-        if(Auth::check() && Auth::user()->username == $username){
-            $user = User::whereUsername($username)->first();
+    //     if(Auth::check() && Auth::user()->username == $username){
+    //         $user = User::whereUsername($username)->first();
 
-<<<<<<< HEAD
+
     public function edit($username){
     	$user = User::whereUsername($username)->first();
     	return view('user.edit',compact('user'));
-=======
-        }
 
-        $user = User::whereUsername(Auth::user()->username)->first();
-        return view('user.edit', compact('user'));
->>>>>>> 413a141ab671dc836c45613afb009172fee80cf9
     }
 
     public function update(Request $request, $username){
