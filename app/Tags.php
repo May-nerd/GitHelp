@@ -4,19 +4,17 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Mainlessons extends Model
+class Tags extends Model
 {
-    //
     protected $fillable = [
-    	'categoryName',
+        'name',
     ];
 
-    public function categorizedBy(){
-    	return $this->belongsToMany('App\Lessons', 'lessoncategory', 'lesson_id', 'mainlesson_id');
+    public function taggedBy(){
+    	return $this->belongsToMany('App\Lessons', 'lessontags', 'lesson_id', 'tag_id');
     }
 
     public function composedBy(){
     	return $this->belongsTo('App\Lessons', 'lesson_id');
     }
-
 }

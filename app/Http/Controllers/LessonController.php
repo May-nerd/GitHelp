@@ -9,6 +9,9 @@ use App\Lesson;
 use App\Lessoncategory;
 use App\Lessontags;
 use App\Page;
+use App\Comments;
+use App\Reads;
+use App\Rates;
 
 class LessonController extends Controller
 {
@@ -127,10 +130,15 @@ class LessonController extends Controller
      */
     public function destroy($id)
     {
+        $lessonrates = Rates::where('lesson_id','=',$id)->delete();
+        $lessonpages = Page::where('lesson_id','=',$id)->delete();
+        $lessonreads = Reads::where('lesson_id','=',$id)->delete();
+        $lessoncomms = Comments::where('lesson_id','=',$id)->delete();
+        $lessontag = Lessontags::where('lesson_id','=',$id)->delete();
+
+        $lessoncat = Lessoncategory::where('lesson_id','=',$id)->delete();
         $lesson = Lesson::findOrFail($id);
         $lesson->delete();
-
-        $lessoncat = Lesson
 
         return redirect('/home');
     }
