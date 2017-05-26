@@ -19,6 +19,8 @@ Route::get('profile', function(){
 	return view('user/profile');
 });
 
+Route::get( '/search', 'SearchController@search_result');
+
 
 Auth::routes();
 
@@ -28,9 +30,7 @@ Route::get('/edit_lesson_plan/', 'LessonController@edit');
 
 Route::get('subjects', function(){ return view('content/subject'); });
 Route::get('categories', function(){ return view('content/category'); });
-Route::get('search', function(){ return view('content/search'); });
 
-Route::any( '/search', 'SearchController@search_result');
 
 // ======================================
 

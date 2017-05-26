@@ -9,8 +9,8 @@ use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
-    public function search_result(){
-    	$search = Input::get ( 'search' );
+    public function search_result(Request $request){
+    	$search = $request->input('name');
     	// $lesson = Lesson::where ( 'title', 'LIKE', '%' . $search . '%' )->get ();
     	$lesson = DB::table('users')->select('users.id', 'users.name', 'lessons.title', 'lessons.created_at')->join('lessons', 'lessons.user_id', '=', 'users.id')->where ( 'lessons.title', 'LIKE', '%' . $search . '%' )->orWhere('users.name', 'LIKE', '%' . $search . '%')->get();
 
