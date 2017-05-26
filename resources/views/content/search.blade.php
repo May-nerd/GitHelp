@@ -92,8 +92,11 @@
         </nav>
 
         @yield('content')
-        <div>
-            <h1>Trial Chuchuness</h1>
+        <div class="container">
+            <h1>Search Results For: [Keyword here]</h1>
+            <div>
+                <h2>Search contents</h2>
+            </div>
         </div>
     </div>
 
