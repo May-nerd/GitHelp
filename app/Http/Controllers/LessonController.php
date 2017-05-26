@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use Auth;
 use App\Lesson;
+use App\Lessoncategory;
+use App\Lessontags;
 use App\Page;
 
 class LessonController extends Controller
@@ -125,9 +127,11 @@ class LessonController extends Controller
      */
     public function destroy($id)
     {
-        //
         $lesson = Lesson::findOrFail($id);
         $lesson->delete();
+
+        $lessoncat = Lesson
+
         return redirect('/home');
     }
 }

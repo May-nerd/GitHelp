@@ -22,4 +22,13 @@ class Lesson extends Model
     	return $this->hasMany('App\Page');
     }
 
+    //
+    public function categorizedAs(){
+        return $this->hasMany('App\Mainlessons', 'lessoncategory', 'lesson_id', 'mainlesson_id');
+    }
+
+    public function 
+
+    public function 
+
 }
