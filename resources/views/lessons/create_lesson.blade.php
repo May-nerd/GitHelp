@@ -118,10 +118,8 @@
                 <input type="submit" name="submit" class="btn btn-success"/>
                 </div>
             </div>
-
-            <button class="btn btn-primary pull-right addPgBtn" title="Add another Page" name="addPage"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add a Page</button>
-
         </form>
+        <button class="btn btn-primary pull-right addPgBtn" title="Add another Page" name="addPage"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add a Page</button>
     </div>
 </div>
 
