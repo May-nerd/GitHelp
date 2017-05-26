@@ -25,6 +25,11 @@ Auth::routes();
 // ============STATIC VIEW ==============
 Route::get('/create_lesson_plan', 'LessonController@create');
 Route::get('/edit_lesson_plan/', 'LessonController@edit');
+Route::get('search', function(){
+	return view('content/search');
+});
+
+
 // ======================================
 
 // do NOT include in Route::group
@@ -36,7 +41,9 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/home', 'HomeController@index');
 	Route::get('/profile/{username}', 'ProfileController@profile');
 
-
+    Route::get('/profile/{username}/subscribes', 'ProfileController@subscribe');
+    Route::get('/profile/{username}/unsubscribes', 'ProfileController@unsubscribe');
 	Route::get('/profile/edit/{username}', 'ProfileController@edit');
 	Route::resource('/profile', 'ProfileController');
 });
+
