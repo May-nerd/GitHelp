@@ -49,7 +49,11 @@
                             </div>
                         </div>
                         <div class="panel-footer text-right custom-footer">
+<<<<<<< HEAD
                             <label class="pageNum">1</label>
+=======
+                            <label name="pageNumber" class="pageNum">0</label>
+>>>>>>> 09f256308e62e15f475ec13644df5bf8fe14c2f0
                         </div>
                     </div>
 
@@ -74,7 +78,11 @@
                             </div>
                         </div>
                         <div class="panel-footer text-right custom-footer">
+<<<<<<< HEAD
                             <label class="pageNum">2</label>
+=======
+                            <label name="pageNumber" class="pageNum">1</label>
+>>>>>>> 09f256308e62e15f475ec13644df5bf8fe14c2f0
                         </div>
                     </div>
 

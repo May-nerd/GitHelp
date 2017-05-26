@@ -22,18 +22,19 @@ Route::get('profile', function(){
 
 Auth::routes();
 
-// ============STATIC VIEW ==============
+// ============ STATIC VIEW ==============
 Route::get('/create_lesson_plan', 'LessonController@create');
 Route::get('/edit_lesson_plan/', 'LessonController@edit');
-Route::get('search', function(){
-	return view('content/search');
-});
 
+Route::get('subjects', function(){ return view('content/subject'); });
+Route::get('categories', function(){ return view('content/category'); });
+Route::get('search', function(){ return view('content/search'); });
 
 // ======================================
 
 // do NOT include in Route::group
 // LessonController already handles middleware
+
 Route::resource('/lessons', 'LessonController');
 
 Route::group(['middleware' => 'auth'], function(){
@@ -41,9 +42,9 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/home', 'HomeController@index');
 	Route::get('/profile/{username}', 'ProfileController@profile');
 
-    Route::get('/profile/{username}/subscribes', 'ProfileController@subscribe');
-    Route::get('/profile/{username}/unsubscribes', 'ProfileController@unsubscribe');
 	Route::get('/profile/edit/{username}', 'ProfileController@edit');
 	Route::resource('/profile', 'ProfileController');
-});
 
+	Route::get('/getlessons/{lesson_id}/{page_number}', 'LessonController@getPage');
+
+});
