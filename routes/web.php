@@ -24,8 +24,9 @@ Auth::routes();
 
 // ============STATIC VIEW ==============
 Route::get('/create_lesson_plan', 'LessonController@create');
-Route::get('/edit_lesson_plan/', 'LessonController@edit');
+Route::get('/edit_lesson_plan/{id}', 'LessonController@edit');
 // ======================================
+
 
 // do NOT include in Route::group
 // LessonController already handles middleware
