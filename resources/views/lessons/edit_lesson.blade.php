@@ -16,6 +16,12 @@
                             </div>
                         </div>
                     </div>
+
+                     <div class="panel panel-default">
+                        <div class="text-center input-gorup">
+                            <input type="text" class="form-control custom-tag-form" name="tags" placeholder="Tags" />
+                        </div>
+                    </div>
                                     
                     <div class="panel panel-default custom-sub-panel">
                         <div class="panel-heading custom-heading">
@@ -28,11 +34,10 @@
                         </div>
                         <div class="panel-body custom-body">
                             <p id="uploadPanel">
-                                <label class="fileContainer btn btn-default">
-                                    <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image
-                                    <input type="file" name="imgUpload" class="btn btn-success"/>
+                               <label class="fileContainer btn btn-default">
+                                    <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)
+                                    <input type="file" name="image[]" />
                                 </label>
-                                <strong>Upload an Image for this page (Optional)</strong>
                             </p>
                             <div class="input-group center-block">
                               <textarea name="pageContent" class="form-control" id="textArea" placeholder="What is this page about?">
