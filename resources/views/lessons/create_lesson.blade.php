@@ -69,11 +69,6 @@
                         <div class="panel-footer text-right custom-footer">
                             <label name="pageNumber" class="pageNum">0</label>
                         </div>
-                        <div class="panel panel-default">
-                            <div class="text-center input-gorup">
-                                <input type="text" class="form-control custom-tag-form" name="tags" placeholder="Tags" />
-                            </div>
-                        </div>
                     </div>
 
                     <div id= "page1" class="page panel panel-default custom-sub-panel">
@@ -101,11 +96,6 @@
                         </div>
                         <div class="panel-footer text-right custom-footer">
                             <label name="pageNumber" class="pageNum">1</label>
-                        </div>
-                         <div class="panel panel-default">
-                            <div class="text-center input-gorup">
-                                <input type="text" class="form-control custom-tag-form" name="tags" placeholder="Tags" />
-                            </div>
                         </div>
                     </div>
 
