@@ -34,9 +34,8 @@ Route::resource('/lessons', 'LessonController');
 Route::group(['middleware' => 'auth'], function(){
 	
 	Route::get('/home', 'HomeController@index');
-	Route::get('/profile/{username}', 'ProfileController@profile');
-
-
-	Route::get('/profile/edit/{username}', 'ProfileController@edit');
+	
 	Route::resource('/profile', 'ProfileController');
+	// Route::patch('/profile/{username}', 'ProfileController@update');
+	// Route::resource('/edit', 'ProfileController');
 });

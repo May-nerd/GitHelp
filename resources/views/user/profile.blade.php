@@ -3,11 +3,7 @@
 @section('content')
 <div class="container">
 	<div class="row col-xs-8 col-xs-offset-2">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h4>Account</h4>
-			</div>
-			
+		<div class="panel panel-default">			
 			<div class="panel-heading">
 				<h4>Lessons Read</h4>
 			</div>
