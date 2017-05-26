@@ -67,7 +67,6 @@
                                     <p name="warning_image[]" class="text-danger none" > *Can only accept .jpeg, .jpg, or .png </p>
                                 </label>
                             </p>
-                            <!-- AGENT P NEEDS FRONT END HELP HERE -->
                             <p name="warning_content[]" class="text-danger"> *Content Required </p>
                             <div class="input-group center-block">
                               <textarea name="page_content[]" class="form-control textArea" placeholder="What is this page about?"></textarea>
