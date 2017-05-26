@@ -34,4 +34,13 @@ class User extends Authenticatable
     public function creates(){
         return $this->hasMany('App\Lesson');
     }
+    
+    public function subscribing(){
+        return $this->belongsToMany('App\User','subscribes', 'subscriber_id', 'user_id')->withTimestamps();
+    }
+    
+    public function is_Subscribed(User $user){
+        
+        return !is_null($this->subscribing()->where('user_id', $user->id)->first());
+    }
 }

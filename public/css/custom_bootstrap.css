@@ -9,7 +9,7 @@
 	font-family: Roboto;
 }
 
-.btn{
+:not(.input-group-btn) > .btn{
 	border-radius: 2em;
 	font-family: Roboto;	
 	border: 0;

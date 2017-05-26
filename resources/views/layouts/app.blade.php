@@ -15,6 +15,7 @@
     <link href="{{ asset('css/custom_bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('css/form.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/search.css') }}" rel="stylesheet">
     @stack('styles')
     <link href="{{ asset('css/autofill_handler.css') }}" rel="stylesheet">
 
@@ -60,6 +61,20 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
+                            <li>
+                                <form class="navbar-form navbar-right">
+                                <div id="navbar-form-group search-input">
+                                        <div class="input-group">
+                                            <input type="text" class="search-query form-control" placeholder=" Search..." />
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-success" type="button">
+                                                <span class=" glyphicon glyphicon-search"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                              </form>
+                            </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -75,7 +90,7 @@
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                            document.getElementById('logout-form').submit();">
                                             Logout
                                         </a>
 
