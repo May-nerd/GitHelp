@@ -16,7 +16,14 @@
                         <div class="panel-body">
                             <div class="col-md-8 input-group center-block text-center">
                                 <input type="text" class="form-control text-center custom-form" name="lesson_title" placeholder="LESSON TITLE" />
+
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="text-center input-gorup">
+                            <input type="text" class="form-control custom-tag-form" name="tags" placeholder="Tags" />
                         </div>
                     </div>
 
@@ -32,14 +39,9 @@
                         <div class="panel-body custom-body">
                             <p class="uploadPanel">
                                 {{--
-                                <!-- it looks nice, but there's no indication that a file has been uploaded
-                                    using unstyled upload button for usability purposes -->
-                                <label class="fileContainer btn btn-default">
-                                    <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image
-                                    <input type="file" name="image[]" class="btn btn-success"/>
-                                </label>
+                              
                                 --}}
-                                <label>
+                                <label class="fileContainer btn btn-default">
                                     <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)
                                     <input type="file" name="image[]" />
                                 </label>
@@ -64,7 +66,10 @@
                         </div>
                         <div class="panel-body custom-body">
                             <p class="uploadPanel">
-                                <label>
+                                {{--
+                              
+                                --}}
+                                <label class="fileContainer btn btn-default">
                                     <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)
                                     <input type="file" name="image[]" />
                                 </label>
@@ -74,9 +79,11 @@
                             </div>
                         </div>
                         <div class="panel-footer text-right custom-footer">
-                            <label class="pageNum">2</label>
+                            <label class="pageNum">1</label>
                         </div>
                     </div>
+
+                    
 
                 <input type="submit" name="submit" class="btn btn-success"/>
                 </div>
