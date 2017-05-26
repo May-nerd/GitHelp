@@ -25,6 +25,7 @@ Auth::routes();
 // ============STATIC VIEW ==============
 Route::get('/create_lesson_plan', 'LessonController@create');
 Route::get('/edit_lesson_plan', 'LessonController@edit');
+
 // ======================================
 
 // do NOT include in Route::group

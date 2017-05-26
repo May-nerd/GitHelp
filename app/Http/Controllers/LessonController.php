@@ -37,6 +37,12 @@ class LessonController extends Controller
         return view('lessons.create_lesson');
     }
 
+    // delete page in create_lesson_plan
+    public function deletepage()
+    {
+        return view('lessons.delete_lesson');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
