@@ -1,0 +1,76 @@
+/* 
+
+Colors Used:
+	#d6ff5a Yellow
+	#5ad3a0 Aquamarine
+
+*/
+
+@font-face{
+	font-family: round;
+	src: url('custom_fonts/Typo_Round_Regular_Demo.otf');
+}
+
+@font-face{
+	font-family: Roboto;
+	src: url('custom_fonts/Roboto-Regular.ttf');
+}
+
+.lessonsidebar {
+	position: fixed;
+	width: 20vw;
+	height: 95vh;
+	top: 50px;
+	overflow: auto;
+}
+
+.lessonnav {
+	padding-bottom: 50px;
+}
+
+.lessonnav > a {
+	display: block;
+	padding: 15px 0px 15px 0px;
+	border: 1px solid #DCDCDC;
+	border-bottom-width: 0;
+}
+
+.lessonnav > a:last-child{
+	border-bottom-width: 1px;
+}
+
+.lessonnav > a:hover {
+	background-color: #DCDCDC;
+}
+
+.breadcrumbs {
+	display: flex;
+}
+
+.breadcrumbs > a, .breadcrumbs > p {
+	padding: 0px 10px 0px 0px;
+	margin: auto;
+}
+
+.content {
+	margin-left: 20vw;
+	width: 78vw;
+	padding-bottom: 50px;
+}
+
+.sampleimg {
+	margin: auto;
+	height: 400px;
+	color: green;
+	width: 80%;
+}
+
+.content > hr {
+	border-top: 3px double #8c8b8b;
+	width: 90%;
+}
+
+.content > p {
+	width: 80%;
+	margin: auto;
+}

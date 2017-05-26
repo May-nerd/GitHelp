@@ -12,7 +12,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/registration.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom_bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/form.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    @stack('styles')
+    <link href="{{ asset('css/autofill_handler.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -20,24 +24,26 @@
             'csrfToken' => csrf_token(),
         ]) !!};
     </script>
+    <script type="text/javascript" src="/js/js.js"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                         <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                        <span class="glyphicon glyphicon-menu-hamburger"></span>
+                        <!-- <span class="icon-bar"></span> -->
+                        <!-- <span class="icon-bar"></span> -->
                     </button>
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'GitHelp') }}
+                        <span class="git">Git</span>
                     </a>
                 </div>
 
@@ -64,7 +70,7 @@
                                         <a href="/profile/{{ Auth::user()->username }}">My Profile</a>
                                     </li>
                                     <li>
-                                        <a href="/profile/{{ Auth::user()->username }}/settings">Profile Settings</a>
+                                        <a href="/profile/edit/{{ Auth::user()->username }}">Profile Settings</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('logout') }}"
@@ -90,5 +96,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    @stack('scripts')
 </body>
 </html>

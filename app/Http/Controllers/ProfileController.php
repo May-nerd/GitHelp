@@ -5,23 +5,29 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Read;
+use Auth;
 
 class ProfileController extends Controller
 {
+
     public function profile($username){
     	$user = User::whereUsername($username)->first();
     	$lessons = $user->reads;
 
     	return view('user.profile', compact(['user', 'lessons']));
     }
-    public function settings($username){
+    
+
+    // public function edit($username){
+
+    //     if(Auth::check() && Auth::user()->username == $username){
+    //         $user = User::whereUsername($username)->first();
+
+
+    public function edit($username){
     	$user = User::whereUsername($username)->first();
-    	
-    	return view('user.settings', compact('user'));
-    }
-    public function edit($id){
-    	$user = User::findOrFail($id);
     	return view('user.edit',compact('user'));
+
     }
 
     public function update(Request $request, $username){
@@ -34,10 +40,21 @@ class ProfileController extends Controller
     			$value = $user[$key];
     		if($key == "password" && $value != "")
     			$request->merge(array('password'=>bcrypt($request->password)));
-    		if($password!=$confpassword)
-    			return ('catch it!');
     	}
     	$user->update($request->all());
     	return redirect('/profile/'.$username);
+    }
+
+    protected function validator(array $data)
+    {
+        
+        $validator = Validator::make($data, [
+            'name' => 'required|string|max:255',
+            'username' => 'required|max:32|unique:users',
+            'email' => 'required|email|max:255|unique:owners',
+            'password' => 'required|string|min:6|confirmed',
+        ], $messages);
+
+        return $validator;
     }
 }

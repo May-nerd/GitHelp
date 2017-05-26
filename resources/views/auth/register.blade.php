@@ -11,10 +11,8 @@
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
-                        <input type="hidden" name="role" value="1" />
+                        <input type="hidden" name="role" value="student" />
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            
-
                             <div class="col-md-12">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Name" required autofocus />
 
@@ -89,3 +87,7 @@
     </div>
 </div>
 @endsection
+
+@push('styles')
+    <!-- <link rel="stylesheet" type="text/css" href="{{asset('css/registration.css')}}"/> -->
+@endpush

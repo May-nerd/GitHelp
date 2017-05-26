@@ -15,7 +15,7 @@ class CreateNotifsTable extends Migration
     {
         Schema::create('notifs', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('from_id');
+            $table->integer('from_id'); // TODO: is this a user id? then make integer('from_id')->unsigned()
             $table->integer('type');
             $table->timestamps();
         });

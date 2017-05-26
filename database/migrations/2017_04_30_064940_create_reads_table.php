@@ -14,10 +14,14 @@ class CreateReadsTable extends Migration
     public function up()
     {
         Schema::create('reads', function (Blueprint $table) {
-            $table->integer('lesson_id');
-            $table->integer('user_id');
-            $table->integer('page_read');
+            $table->increments('id');
+            $table->integer('lesson_id')->unsigned();
+            $table->integer('user_id')->unsigned();
+            $table->integer('page_read'); // TODO: boolean?
             $table->timestamps();
+
+            $table->foreign('lesson_id')->references('id')->on('lessons');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

@@ -14,12 +14,15 @@ class CreatePagesTable extends Migration
     public function up()
     {
         Schema::create('pages', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('page_number');
-            $table->integer('lesson_id');
+            $table->integer('lesson_id')->unsigned();
             $table->string('title');
-            $table->text('content');
-            $table->enum('has_image', ['0', '1']);
+            $table->mediumText('content');
+            $table->string('image')->nullable();
             $table->timestamps();
+
+            $table->foreign('lesson_id')->references('id')->on('lessons');
         });
     }
 

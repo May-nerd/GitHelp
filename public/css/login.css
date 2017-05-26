@@ -1,0 +1,44 @@
+@font-face{
+	font-family: round;
+	src: url('custom_fonts/Typo_Round_Regular_Demo.otf');
+}
+
+@font-face{
+	font-family: Roboto;
+	src: url('custom_fonts/Roboto-Regular.ttf');
+}
+
+.left-panel,
+.right-panel{
+	display: flex;
+	align-items: center;
+	min-height: 80vh;
+}
+
+.left-panel{
+	justify-content: flex-end;
+}
+
+.right-panel{
+	justify-content: flex-start;
+}
+
+.git-logo{
+	width: 200px!important;
+}
+
+.login-form{
+	width: 100%;
+	transform: translate(-10%, 0);
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"]{
+	font-size: 1.1em;
+}
+
+.login-form button[type='submit']{
+	padding: 6px 24px 6px 24px; 
+	font-size: 1.25em;
+	font-family: round;
+}

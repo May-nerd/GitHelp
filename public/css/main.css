@@ -1,0 +1,45 @@
+/* 
+
+Colors Used:
+	#d6ff5a Yellow
+	#5ad3a0 Aquamarine
+
+*/
+
+@font-face{
+	font-family: round;
+	src: url('custom_fonts/Typo_Round_Regular_Demo.otf');
+}
+
+@font-face{
+	font-family: Roboto;
+	src: url('custom_fonts/Roboto-Regular.ttf');
+}
+
+.git{
+	font-family: round;
+	color: #d6ff5a;
+	filter: brightness(90%);
+	margin: 0;
+}
+
+.git::after{
+	content: "Help";
+	color: #5ad3a0;
+}
+
+.git-logo.xsmall{
+	width: 62px;
+}
+
+.git-logo.small{
+	width: 100px;
+}
+
+.git-logo.medium{
+	width: 160px;
+}
+
+.git-logo.large{
+	width: 256px;
+}
