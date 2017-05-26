@@ -89,6 +89,14 @@
 	width: 120px;
 }
 
+.none{
+	display: none;
+}
+
+#hidden{
+	visibility: hidden;
+}
+
 /*=========TYPE FILE SHIT===========*/
 .fileContainer {
     overflow: hidden;

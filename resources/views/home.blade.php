@@ -15,7 +15,7 @@
                                 <div>
                                     {{ $lesson->title }}
 
-                                    <button class="btn btn-danger" data-toggle="modal" data-target="#deleteLesson">Delete</button>
+                                    <button class="btn btn-danger" data-toggle="modal" data-target="#deleteLesson"><span class="glyphicon glyphicon-trash">&nbsp;</span> Delete</button>
                                 </div>
                                 <hr />
                             <div class="modal fade" id="deleteLesson" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
@@ -25,14 +25,18 @@
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                         </div>
                                         <div class="modal-body">
-                                          <h4>Are you sure you want to delete this lesson?</h4>
-                                          
-                                            <form action="/lessons/{{$lesson->id}}" method="post">
-                                                {{ csrf_field() }}
-                                                {{method_field('DELETE')}}
+                                            <div class="text-center">
+                                              <h4>Are you sure you want to delete this lesson?</h4>
+                                              
 
-                                                <input type="submit" class="btn btn-danger" value="Delete"/>
-                                                <input type="button" class="btn btn-default" value="No" data-dismiss="modal">
+                                                <form action="/lessons/{{$lesson->id}}" method="post">
+                                                    {{ csrf_field() }}
+                                                    {{method_field('DELETE')}}
+
+                                                
+                                                    <input type="submit" class="btn btn-danger" value="Delete"/>
+                                                    <input type="button" class="btn btn-default" value="No" data-dismiss="modal">
+                                                </div>
                                             </form>
                                         </div>
                                     </div>

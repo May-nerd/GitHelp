@@ -16,7 +16,7 @@
                         <div class="panel-body">
                             <div class="col-md-8 input-group center-block text-center">
                                 <input id="lesson_title" type="text" class="form-control text-center custom-form" name="lesson_title" placeholder="LESSON TITLE" />
-                                 <p id="warning_lesson_title" class="text-warning" style="color: red; font-size: 15px; display: none;"> *Lesson Title is required </p>
+                                 <p id="warning_lesson_title" class="text-danger"> *Lesson Title is required </p>
                             </div>
                         </div>
                     </div>
@@ -44,12 +44,13 @@
                     <!-- This is hidden because of this is template for new pages -->
                     <div id="page0" class="page panel panel-default custom-sub-panel" style="display: none;">
                         <div class="panel-heading custom-heading">
-                            <div class="col-md-6  center-block">
+                            <div class="col-md-4  center-block">
                                 <input type="text" class="form-control custom-sub-form" name="page_title[]" placeholder="Provide a Page Title" />
                             </div>
-                            <!-- AGENT P NEEDS FRONT END HELP HERE -->
-                             <p name="warning_title[]" class="text-warning" style="color: red; font-size: 15px; display: none;"> *Title Required </p>
-                            <div class="input-group col-md-6 text-right">
+                            <div class="col-md-4">
+                                <label name="warning_title[]" class="text-danger"> *Title Required </label>
+                            </div>
+                            <div class="input-group col-md-4 text-right">
                                 <button type="button" class="btn btn-default deletePage" title="Delete this Page" name="addPage"><span class="glyphicon glyphicon-trash"></span></button>
                             </div>
                         </div>
@@ -63,11 +64,10 @@
                                  <label class="fileContainer btn btn-default">
                                     <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)
                                     <input type="file" name="image[]"/>
-                                    <p name="warning_image[]" class="text-warning" style="color: red; font-size: 15px; display: none;"> *Can only accept .jpeg, .jpg, or .png </p>
+                                    <p name="warning_image[]" class="text-danger none" > *Can only accept .jpeg, .jpg, or .png </p>
                                 </label>
                             </p>
-                            <!-- AGENT P NEEDS FRONT END HELP HERE -->
-                            <p name="warning_content[]" class="text-warning" style="color: red; font-size: 15px; display: none;"> *Content Required </p>
+                            <p name="warning_content[]" class="text-danger"> *Content Required </p>
                             <div class="input-group center-block">
                               <textarea name="page_content[]" class="form-control textArea" placeholder="What is this page about?"></textarea>
                             </div>
@@ -82,11 +82,11 @@
                             <div class="col-md-6 pull-left center-block">
                                 <input type="text" class="form-control custom-sub-form" name="page_title[]" placeholder="Provide a Page Title" />
                             </div>
-                            <!-- AGENT P NEEDS FRONT END HELP HERE -->
-                             <p name="warning_title[]" class="text-warning" style="color: red; font-size: 15px; display: none;"> *Title Required </p>
+                            <div class="col-md-4">
+                                <label name="warning_title[]" class="text-danger"> *Title Required </label>
+                            </div> 
                             <div class="input-group col-md-6 text-right">
-                               <!-- AGENT P NEEDS FRONT END HELP HERE -->
-                                <button type="button" class="deletePage btn btn-default" title="Delete this Page" name="deletePage" style="visibility: hidden"><span class="glyphicon glyphicon-trash"></span></button>
+                                <button type="button" class="deletePage btn btn-default" title="Delete this Page" name="deletePage" id="hidden"><span class="glyphicon glyphicon-trash"></span></button>
                             </div>
                         </div>
                         <div class="panel-body custom-body">
@@ -97,11 +97,10 @@
                                 <label  class="fileContainer btn btn-default">
                                     <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)
                                     <input type="file" name="image[]" />
-                                    <p name="warning_image[]" class="text-warning" style="color: red; font-size: 15px; display: none;"> *Can only accept .jpeg, .jpg, or .png </p>
+                                    <p name="warning_image[]" class="text-danger none"> *Can only accept .jpeg, .jpg, or .png </p>
                                 </label>
                             </p>
-                            <!-- AGENT P NEEDS FRONT END HELP HERE -->
-                            <p name="warning_content[]" class="text-warning" style="color: red; font-size: 15px; display: none;"> *Content Required </p>
+                            <p name="warning_content[]" class="text-danger"> *Content Required </p>
                             <div class="input-group center-block">
                               <textarea name="page_content[]" class="form-control textArea" placeholder="What is this page about?"></textarea>
                             </div>
