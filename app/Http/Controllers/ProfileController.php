@@ -37,18 +37,20 @@ class ProfileController extends Controller
     public function update(Request $request, $profile){
 
     	$user = User::whereUsername($profile)->first();
-    	$password = bcrypt($request->password);
+    	$password = $request->password;
+        if (empty($password)){
+            $password = $user->password;
+        }else{
+            $password = bcrypt($password);
+        }
+        
     	foreach($request as $key=>$value){
     		if($value == ""){
                 $value = $user[$key];
             }
-    		// if($key == "password" && $value != ""){
-      //           $request->user()->fill(['password'=>$password])->save();
-      //           //$request->user()->fill(['password'=>$pass]);
-      //       }
     	}
-    	$user->update($request->all());
-        $request->user()->fill(['password'=>$password])->save();
+        $request->merge(array('password'=>$password));
+        $user->update($request->all());
         $lessons = $user->reads;
     	return view('user.profile', compact(['user', 'lessons']));
     }
