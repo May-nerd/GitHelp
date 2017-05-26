@@ -16,24 +16,23 @@
                         <div class="panel-body">
                             <div class="col-md-8 input-group center-block text-center">
                                 <input type="text" class="form-control text-center custom-form" name="lesson_title" placeholder="LESSON TITLE" />
-
                             </div>
                         </div>
                     </div>
 
                     <div class="panel panel-default">
-                        <div class="text-center input-gorup">
+                        <div class="text-center input-group">
                             <input type="text" class="form-control custom-tag-form" name="tags" placeholder="Tags" />
                         </div>
                     </div>
 
                     <div class="panel panel-default custom-sub-panel">
                         <div class="panel-heading custom-heading">
-                            <div class="col-md-6 pull-left center-block">
+                            <div class="col-md-6  center-block">
                                 <input type="text" class="form-control custom-sub-form" name="page_title[]" placeholder="Provide a Page Title" />
                             </div>
                             <div class="input-group col-md-6 text-right">
-                                <button class="btn btn-default" title="Delete this Page" name="addPage"><span class="glyphicon glyphicon-trash"></span></button>
+                                <button class="btn btn-default" title="Delete this Page" disabled><span class="glyphicon glyphicon-trash" disabled></span></button>
                             </div>
                         </div>
                         <div class="panel-body custom-body">
