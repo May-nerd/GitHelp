@@ -51,7 +51,8 @@ class LessonController extends Controller
         $lesson = new Lesson;
 
         $lesson->user_id = Auth::id();
-        $lesson->title = $request->lesson_title;
+        $files = $request->file('image.*');
+        $lesson->title = count($files);//$request->lesson_title;
         $lesson->save();
 
         $titles = $request->input('page_title.*');
@@ -61,7 +62,7 @@ class LessonController extends Controller
             $page = new Page;
             $page->page_number = $i + 1;
             $page->lesson_id = $lesson->id;
-            $page->title = $titles[$i];
+            $page->title = count($files);//$titles[$i];
             $page->content = $contents[$i];
 
             // create unique filename. save in public/uploads

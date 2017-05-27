@@ -56,27 +56,13 @@
                         </div>
                         <div class="panel-body custom-body">
                             <p class="uploadPanel">
-                                {{--
-                                 --}}
                                 <strong><span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)</strong>
-                                    <input type="file" name="image[]" class="btn btn-default" />
-                               <!--  <label  class="fileContainer btn btn-default">
-                                    <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)
-                                    <input type="file" name="image[]" />
-                                </label> -->
-                                <!-- <div>
-                                    <input type="file" name="image[]" class="inputfile inputfile-6"/>
-                                    <label for="image">
-                                        <span id="echo-file">echo img filename here</span>
-                                        <strong>
-                                            Upload an Image (optional)
-                                        </strong>
-                                    </label>
-                                </div> -->
+                                <input type="hidden" name="image[]" value="empty" disabled />
+                                <input type="file" name="image[]" class="btn btn-default" />
+
                                 <p name="warning_content[]" class="text-danger none"> *Content Required </p>
                                 <p name="warning_image[]" class="text-danger none" > *Can only accept .jpeg, .jpg, or .png </p>
                             </p>
-                            
                             <div class="input-group center-block">
                               <textarea name="page_content[]" class="form-control textArea" placeholder="What is this page about?"></textarea>
                             </div>
@@ -100,17 +86,9 @@
                         </div>
                         <div class="panel-body custom-body">
                              <p class="uploadPanel">
-                                {{--
-                                 --}}
-                                
-                                 <!-- <div  class="fileContainer btn btn-default"> -->
-
                                 <strong><span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)</strong>
-                                    <input type="file" name="image[]" class="btn btn-default" />
-                                   <!--  <label for="image">
-                                        <span id="echo-file" class="echo-file">echo img filename here</span>
-                                </label> -->
-                                <!-- </div> -->
+                                <input type="hidden" name="image[]" value="empty" disabled />
+                                <input type="file" name="image[]" class="btn btn-default" />
 
                                 <p name="warning_content[]" class="text-danger none"> *Content Required </p>
                                 <p name="warning_image[]" class="text-danger none" > *Can only accept .jpeg, .jpg, or .png </p>
@@ -124,7 +102,6 @@
                         </div>
                     </div>
 
-                <!-- <input type="submit" name="submit" class="btn btn-success"/> -->
                 <button type="submit" name="submit" class="btn submitLesson btn-success"> Submit </button>
                 </div>
             </div>
