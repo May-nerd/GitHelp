@@ -1,0 +1,39 @@
+.result-banner{
+	margin-bottom: 1em;
+}
+.results-container{
+	width: 50%;
+	margin: auto;
+}
+
+.result{
+	background-color: white;
+	box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+	margin-bottom: 1em;
+	padding: 0.5em;
+	position: relative;
+}
+
+.result-title{
+	font-weight: bold;
+	font-size: 1.2em;
+	margin-bottom: 0.2em;
+}
+
+.result-author{
+	font-style: italic;
+	color: #555;
+}
+
+.result-date{
+	color: #888;
+	position: absolute; 
+	top: 0.5em;
+	right: 0.5em;
+}
+
+.view-button{
+	position: absolute;
+	bottom: 0.5em;
+	right: 0.5em; 
+}

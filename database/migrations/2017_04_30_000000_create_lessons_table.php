@@ -16,6 +16,10 @@ class CreateLessonsTable extends Migration
         Schema::create('lessons', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
+            
+            // Main category id
+            $table->integer('maincategory_id')->unsigned();
+            
             $table->string('title');
             $table->timestamps();
 

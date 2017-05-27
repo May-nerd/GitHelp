@@ -4,9 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Tag extends Model
+class Notif extends Model
 {
     protected $fillable = [
-        'name'
+        //who sent the notif
+        //what does the notif say?
     ];
 }

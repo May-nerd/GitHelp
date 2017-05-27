@@ -4,9 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Tag extends Model
+class Pages extends Model
 {
+    //
     protected $fillable = [
-        'name'
+    	'page_number', 'lesson_id', 'title', 'content', 'has_image'
     ];
 }

@@ -14,7 +14,13 @@
 	border-right: 1px solid rgba(128,128,128, 0.2);
 	box-shadow: none;
 }
-
+.custom-tag-form{
+	border: 1px solid rgba(128,128,128, 0.2);
+	box-shadow: none;
+}
+.custom-tag-form:focus{
+	border: 2px solid rgba(128,128,128, 0.2);
+}
 
 .custom-form{
 	box-shadow: none !important;
@@ -72,6 +78,25 @@
 	/*display: inline;*/
 }
 
+#main-tag > label:first-child{
+	display: flex;
+	align-items: center;
+	margin-bottom: 0.5em;
+}
+
+#main-tag > label:first-child > p{
+	margin: 0;
+	width: 120px;
+}
+
+.none{
+	display: none;
+}
+
+#hidden{
+	visibility: hidden;
+}
+
 /*=========TYPE FILE SHIT===========*/
 .fileContainer {
     overflow: hidden;
@@ -91,3 +116,21 @@
     text-align: right;
     top: 0;
 }
+
+.echo-file
+{
+    padding: 0.625rem 1.25rem;
+    border: 2px solid #ccc;
+}
+
+.echo-file{
+    width: 200px;
+    min-height: 2em;
+    display: inline-block;
+    border-radius: 4px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: top;
+}
+
