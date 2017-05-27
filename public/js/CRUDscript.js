@@ -3,7 +3,7 @@ $(document).ready(function(){
 	$(document).on("click", ".deletePage", deletePage);
 //	$(document).on("click", ".submitLesson", submit);
 	$("#lesson_form").submit(function() {
-		return validate();
+		return true;//validate();
 	});
 });
 
