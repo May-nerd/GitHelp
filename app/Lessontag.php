@@ -4,9 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Tag extends Model
+class Lessontag extends Model
 {
     protected $fillable = [
-        'name'
+    	'lesson_id', 'tag_id'
     ];
+
 }

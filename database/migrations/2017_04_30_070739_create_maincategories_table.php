@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLessoncategoryTable extends Migration
+class CreateMaincategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateLessoncategoryTable extends Migration
      */
     public function up()
     {
-        Schema::create('lessoncategory', function (Blueprint $table) {
+        Schema::create('maincategories', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('lesson_id')->unsigned();
-            $table->integer('mainlesson_id')->unsigned();
+            $table->string('name');
             $table->timestamps();
-
-            $table->foreign('lesson_id')->references('id')->on('lessons');
-            $table->foreign('mainlesson_id')->references('id')->on('mainlessons');
         });
     }
 
@@ -31,6 +27,6 @@ class CreateLessoncategoryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lessoncategory');
+        Schema::dropIfExists('maincategories');
     }
 }

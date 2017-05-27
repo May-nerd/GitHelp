@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App;
 
-class HomeController extends Controller
+class TagController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -22,25 +23,31 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index($maincategory, $tagname)
     {
-        $tagnames = DB::table('lessons')
-        ->select('*', DB::raw('tags.name as tagname'), DB::raw('COUNT(*) as count'))
-        // ->select('*', , DB::raw('COUNT(lessontags.id) as number'))
+        // $maincategory_id = DB::table('maincategories')
+        // ->select('id')
+        // ->where('name', '=', $maincategory)
+        // ->get();
+
+        $maincategory_id = App\Maincategory::where('name', $maincategory)
+        ->get()->first()->id;
+
+        $lessons = DB::table('lessons')
+        ->select('*')
         ->join('lessontags', 'lessons.id', '=', 'lessontags.lesson_id')
         ->join('tags', 'lessontags.tag_id', '=', 'tags.id')
-
         ->join('maincategories', 'maincategories.id', '=', 'maincategory_id')
         // ->select('tags.  name')
-        ->where('lessons.maincategory_id', '=', $id)
+        ->where('lessons.maincategory_id', '=', $maincategory_id)
+        ->where('tags.name', '=', $tagname)
         ->groupBy('tags.id')
-        ->orderBy('count', 'DESC')
         ->get();
 
-        return ($tagnames);
-    }
-    public function show(){
-        return view('home');
+
+
+
+        return view('tagresults', compact('maincategory', 'tagname', 'lessons'));
     }
 }
 

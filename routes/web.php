@@ -40,7 +40,14 @@ Route::resource('/lessons', 'LessonController');
 
 Route::group(['middleware' => 'auth'], function(){
 	
-	Route::get('/home', 'HomeController@index');
+
+	Route::get('/home', 'HomeController@show');
+
+	// This is for the tag, ajax
+	Route::get('/home/{id}', 'HomeController@index');
+
+	Route::get('tags/{maincategory}/{tagname}', 'TagController@index');
+
 	Route::resource('/profile', 'ProfileController');
 	
 // 	Route::resource('/profile', 'ProfileController');
@@ -54,6 +61,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::resource('/profile', 'ProfileController');
     
     	Route::resource('/notification', 'NotifsController');
+
 	Route::get('/profile/edit/{username}', 'ProfileController@edit');
 	Route::resource('/profile', 'ProfileController');
 	Route::get('/getlessons/{lesson_id}/{page_number}', 'LessonController@getPage');
