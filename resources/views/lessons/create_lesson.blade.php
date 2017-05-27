@@ -112,7 +112,7 @@
                     </div>
 
                 <!-- <input type="submit" name="submit" class="btn btn-success"/> -->
-                <button type="button" name="submit" class="btn submitLesson btn-success"> Submit </button>
+                <button type="submit" name="submit" class="btn submitLesson btn-success"> Submit </button>
                 </div>
             </div>
             <button type="button" class="addPage btn btn-primary pull-right addPgBtn" title="Add another Page" name="addPage"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add a Page</button>

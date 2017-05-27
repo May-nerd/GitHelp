@@ -63,7 +63,7 @@
                         @else
                             <li>
                                 <div id="navbar-form-group search-input">
-                                    <form action="/search" method="POST" role="search" class="navbar-form navbar-right">
+                                    <form action="/search" method="GET" role="search" class="navbar-form navbar-right">
                                         {{ csrf_field() }}
                                         <div class="input-group">
                                             <input type="text" class="form-control search-query" name="search"
