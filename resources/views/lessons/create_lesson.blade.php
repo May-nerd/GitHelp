@@ -57,14 +57,14 @@
                         <div class="panel-body custom-body">
                             <p class="uploadPanel">
                                 {{--
-                                <!-- it looks nice, but there's no indication that a file has been uploaded
-                                    using unstyled upload button for usability purposes -->
+                                <!-- Success prompt for image upload is added. Just use the "none"  class to display:none. tnx -->
                                
                                 --}}
                                  <label class="fileContainer btn btn-default">
                                     <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)
                                     <input type="file" name="image[]"/>
                                     <p name="warning_image[]" class="text-danger none" > *Can only accept .jpeg, .jpg, or .png </p>
+                                    <p name="success_image[]" class="text-success" > <span class="glyphicon glyphicon-ok"></span>&nbsp;Image successfully uploaded. </p>
                                 </label>
                             </p>
                             <p name="warning_content[]" class="text-danger"> *Content Required </p>
@@ -98,6 +98,7 @@
                                     <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)
                                     <input type="file" name="image[]" />
                                     <p name="warning_image[]" class="text-danger none"> *Can only accept .jpeg, .jpg, or .png </p>
+                                    <p name="success_image[]" class="text-success" > <span class="glyphicon glyphicon-ok"></span>&nbsp;Image successfully uploaded. </p>
                                 </label>
                             </p>
                             <p name="warning_content[]" class="text-danger"> *Content Required </p>
