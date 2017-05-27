@@ -1,3 +1,8 @@
+@font-face{
+	font-family: Roboto;
+	src: url('custom_fonts/Roboto-Regular.ttf');
+}
+
 .custom-panel{
 	box-shadow: none;
 }
@@ -9,7 +14,13 @@
 	border-right: 1px solid rgba(128,128,128, 0.2);
 	box-shadow: none;
 }
-
+.custom-tag-form{
+	border: 1px solid rgba(128,128,128, 0.2);
+	box-shadow: none;
+}
+.custom-tag-form:focus{
+	border: 2px solid rgba(128,128,128, 0.2);
+}
 
 .custom-form{
 	box-shadow: none !important;
@@ -65,6 +76,25 @@
 .uploadPanel{
 	margin-bottom: 20px;
 	/*display: inline;*/
+}
+
+#main-tag > label:first-child{
+	display: flex;
+	align-items: center;
+	margin-bottom: 0.5em;
+}
+
+#main-tag > label:first-child > p{
+	margin: 0;
+	width: 120px;
+}
+
+.none{
+	display: none;
+}
+
+#hidden{
+	visibility: hidden;
 }
 
 /*=========TYPE FILE SHIT===========*/

@@ -3,6 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
+
         <div class="col-md-6 left-panel">
             <div>
                 <img class="git-logo medium" src="{{asset('images/GitHelp_Logo.png')}}" alt="GitHelp Logo">
@@ -10,8 +11,9 @@
             </div>
         </div>
 
-        <div class="col-md-4 right-panel">
-            <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}" autocomplete="off">
+        <div class="col-md-3 right-panel">
+            <form class="form-horizontal login-form" role="form" method="POST" action="{{ route('login') }}" autocomplete="off">
+
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">

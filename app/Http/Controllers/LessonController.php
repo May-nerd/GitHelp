@@ -24,7 +24,7 @@ class LessonController extends Controller
      */
     public function index()
     {
-        //
+        return view('');
     }
 
     /**
@@ -56,8 +56,7 @@ class LessonController extends Controller
         $titles = $request->input('page_title.*');
         $files = $request->file('image.*');
         $contents = $request->input('page_content.*');
-
-        for ($i = 0; $i < count($titles); $i++) {
+        for ($i = 1; $i < count($titles); $i++) {
             $page = new Page;
             $page->page_number = $i + 1;
             $page->lesson_id = $lesson->id;
@@ -91,7 +90,10 @@ class LessonController extends Controller
      */
     public function show($id)
     {
-        //
+        $lessons = Lesson::find($id);
+        $pages = Page::where('lesson_id','=',$id)->get();
+
+        return view('lessons.view_lesson', compact('lessons', 'pages'));
     }
 
     /**
@@ -126,5 +128,10 @@ class LessonController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getPage($lesson_id, $page_number)
+    {
+        return Page::where('lesson_id','=',$lesson_id)->where('page_number','=',$page_number)->get();
     }
 }

@@ -22,7 +22,7 @@
                         <div id='lessons-list'>
                             @forelse($lessons as $lesson)
                             <div class="lesson">
-                                <button class="btn btn-primary">{{$lesson->title}}</h1>
+                                <button class="btn btn-danger">{{$lesson->title}}</h1>
                             </div>
                             @empty
                                 <h1>No lessons found.</h1>

@@ -15,6 +15,7 @@
     <link href="{{ asset('css/custom_bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('css/form.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/search.css') }}" rel="stylesheet">
     @stack('styles')
     <link href="{{ asset('css/autofill_handler.css') }}" rel="stylesheet">
 
@@ -24,6 +25,8 @@
             'csrfToken' => csrf_token(),
         ]) !!};
     </script>
+    <script type="text/javascript" src="/js/js.js"></script>
+    <script type="text/javascript" src="/js/CRUDscript.js"></script>
 </head>
 <body>
     <div id="app">
@@ -58,6 +61,21 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
+                            <li>
+                                <div id="navbar-form-group search-input">
+                                    <form action="/search" method="GET" role="search" class="navbar-form navbar-right">
+                                        {{ csrf_field() }}
+                                        <div class="input-group">
+                                            <input type="text" class="form-control search-query" name="search"
+                                                placeholder="Search..."> <span class="input-group-btn">
+                                                <button type="submit"  class="btn btn-success">
+                                                    <span class="glyphicon glyphicon-search"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -68,12 +86,12 @@
                                         <a href="/profile/{{ Auth::user()->username }}">My Profile</a>
                                     </li>
                                     <li>
-                                        <a href="/profile/edit/{{ Auth::user()->username }}">Profile Settings</a>
+                                        <a href="/profile/{{ Auth::user()->username }}/edit">Profile Settings</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                            document.getElementById('logout-form').submit();">
                                             Logout
                                         </a>
 

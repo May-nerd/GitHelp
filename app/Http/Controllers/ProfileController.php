@@ -6,42 +6,55 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Read;
 use Auth;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\MessageBag;
+use Illuminate\Support\Facades\Input;
 
 class ProfileController extends Controller
 {
 
-    public function profile($username){
+
+    public function show($username){
     	$user = User::whereUsername($username)->first();
     	$lessons = $user->reads;
 
     	return view('user.profile', compact(['user', 'lessons']));
     }
     
-
-    // public function edit($username){
-
-    //     if(Auth::check() && Auth::user()->username == $username){
-    //         $user = User::whereUsername($username)->first();
-
-
-    public function edit($username){
-    	$user = User::whereUsername($username)->first();
+    public function edit(){
+    	$user = User::whereUsername(Auth::user()->username)->first();
     	return view('user.edit',compact('user'));
-
     }
 
-    public function update(Request $request, $username){
-    	$user = User::whereUsername($username)->first();
-    	$password= $request->password;
-    	$confpassword= $request->confpassword;
 
+    public function index($username){
+        $user = User::whereUsername($username)->first();
+        $lessons = $user->reads;
+
+        return view('user.profile', compact(['user', 'lessons']));
+    }
+
+    public function update(Request $request, $profile){
+        if($profile != Auth::user()->username){
+            $profile = Auth::user()->username;
+        }
+    	$user = User::whereUsername($profile)->first();
+    	$password = $request->password;
+        if (empty($password)){
+            $password = $user->password;
+        }else{
+            $password = bcrypt($password);
+        }
+        
     	foreach($request as $key=>$value){
-    		if($value=="")
-    			$value = $user[$key];
-    		if($key == "password" && $value != "")
-    			$request->merge(array('password'=>bcrypt($request->password)));
+    		if($value == ""){
+                $value = $user[$key];
+            }
     	}
-    	$user->update($request->all());
+
+        $request->merge(array('password'=>$password));
+        $user->update($request->all());
+        $username = $user->username;
     	return redirect('/profile/'.$username);
     }
 
@@ -56,5 +69,34 @@ class ProfileController extends Controller
         ], $messages);
 
         return $validator;
+        
     }
+       public function subscribe($username){
+ 
+         // get username of the profile ur on
+        $user = User::where('username', $username)->firstOrFail();
+        
+       
+        // get id of user and attach to me
+        $id = Auth::id();
+        $me = User::find($id);
+        $me->subscribing()->attach($user->id);
+        
+        return redirect('/profile/' . $username);
+    }
+
+    public function unsubscribe($username){
+    
+        // get username of the profile ur on
+        $user = User::where('username', $username)->firstOrFail();
+        
+        // delete user from me
+        $me = Auth::user();
+        $me->subscribing()->detach($user->id);
+        
+        return redirect('/profile/' . $username);
+        $lessons = $user->reads;
+    	return view('user.profile', compact(['user', 'lessons']));
+    }
+    
 }
