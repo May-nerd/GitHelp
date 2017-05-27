@@ -2,21 +2,19 @@ $(document).ready(function(){
 	$(document).on("click", ".addPage", addPage);
 	$(document).on("click", ".deletePage", deletePage);
 //	$(document).on("click", ".submitLesson", submit);
-	$(".submitLesson").submit(function() {
-		check_file_inputs();
+	$("#lesson_form").submit(function() {
 		return validate();
 	});
 });
 
 /* PWNED BY AGENT PROXY "SERVING YOU SPAGHETTI CODE SINCE 2014 FIXED NA PLESSSS" */
 function addPage(){
-	i = document.getElementsByClassName('page');
-	$('#page0').clone().attr('id','page'+(i.length)).insertAfter('#page' + (i.length- 1));
-	document.getElementById("page" + (i.length-1)).style.display = "block";
-	node = document.getElementById("page" + (i.length-1));
-	// console.log(node.lastChild.textContent);
-	node.lastChild.firstChild.innerHTML = i.length-1;
-	
+	pages = $("#lesson_form .page").length;
+	page = $("#page_template").clone().removeAttr("id").show();
+	$("input.file_upload", page).attr("name", "image[" + pages + "]");
+	$("label.pageNum", page).html(pages + 1);
+	$(page).insertAfter($("#lesson_form .page").last());
+	console.log($(page)[0].outerHTML);
 }
 // doesn't have to have a query since it won't be submitted int the first place - リン
 function deletePage() {
@@ -75,13 +73,4 @@ function validate(){
 	}
 	console.log(bool);
 	return bool;
-}
-
-function check_file_inputs() {
-	$("form > input:file[name='image\\[\\]']").each(function() {
-		if ($(this).files.length === 0) {
-			$(this).prev("input:disabled[type='hidden'][name='image\\[\\]']").prop("disabled", false);
-			console.log("enabled");
-		}
-	});
 }

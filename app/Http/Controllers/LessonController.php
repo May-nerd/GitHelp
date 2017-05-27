@@ -58,7 +58,7 @@ class LessonController extends Controller
         $titles = $request->input('page_title.*');
         $files = $request->file('image.*');
         $contents = $request->input('page_content.*');
-        for ($i = 1; $i < count($titles); $i++) {
+        for ($i = 0; $i < count($titles); $i++) {
             $page = new Page;
             $page->page_number = $i + 1;
             $page->lesson_id = $lesson->id;

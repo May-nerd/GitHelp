@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <form id="form" action="{{ url('lessons') }}" enctype="multipart/form-data" method="POST">
+        <form id="lesson_form" action="{{ url('lessons') }}" enctype="multipart/form-data" method="POST">
 
             {{ csrf_field() }}
 
@@ -41,38 +41,7 @@
                         </div>
                     </div>
 
-                    <!-- This is hidden because of this is template for new pages -->
-                    <div id="page0" class="page panel panel-default custom-sub-panel" style="display: none;">
-                        <div class="panel-heading custom-heading">
-                            <div class="col-md-4  center-block">
-                                <input type="text" class="form-control custom-sub-form" name="page_title[]" placeholder="Provide a Page Title" />
-                            </div>
-                            <div class="col-md-4">
-                                <label name="warning_title[]" class="text-danger none"> *Title Required </label>
-                            </div>
-                            <div class="input-group col-md-4 text-right">
-                                <button type="button" class="btn btn-default deletePage" title="Delete this Page" name="addPage"><span class="glyphicon glyphicon-trash"></span></button>
-                            </div>
-                        </div>
-                        <div class="panel-body custom-body">
-                            <p class="uploadPanel">
-                                <strong><span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)</strong>
-                                <input type="hidden" name="image[]" value="empty" disabled />
-                                <input type="file" name="image[]" class="btn btn-default" />
-
-                                <p name="warning_content[]" class="text-danger none"> *Content Required </p>
-                                <p name="warning_image[]" class="text-danger none" > *Can only accept .jpeg, .jpg, or .png </p>
-                            </p>
-                            <div class="input-group center-block">
-                              <textarea name="page_content[]" class="form-control textArea" placeholder="What is this page about?"></textarea>
-                            </div>
-                        </div>
-                        <div class="panel-footer text-right custom-footer">
-                            <label name="pageNumber" class="pageNum">0</label>
-                        </div>
-                    </div>
-
-                    <div id= "page1" class="page panel panel-default custom-sub-panel">
+                    <div class="page panel panel-default custom-sub-panel">
                         <div class="panel-heading custom-heading">
                             <div class="col-md-6 pull-left center-block">
                                 <input type="text" class="form-control custom-sub-form" name="page_title[]" placeholder="Provide a Page Title" />
@@ -87,8 +56,7 @@
                         <div class="panel-body custom-body">
                              <p class="uploadPanel">
                                 <strong><span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)</strong>
-                                <input type="hidden" name="image[]" value="empty" disabled />
-                                <input type="file" name="image[]" class="btn btn-default" />
+                                <input type="file" name="image[0]" class="file_upload btn btn-default" />
 
                                 <p name="warning_content[]" class="text-danger none"> *Content Required </p>
                                 <p name="warning_image[]" class="text-danger none" > *Can only accept .jpeg, .jpg, or .png </p>
@@ -107,6 +75,36 @@
             </div>
             <button type="button" class="addPage btn btn-primary pull-right addPgBtn" title="Add another Page" name="addPage"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add a Page</button>
         </form>
+
+        <!-- page template -->
+        <div id="page_template" class="page panel panel-default custom-sub-panel" style="display: none;">
+            <div class="panel-heading custom-heading">
+                <div class="col-md-4  center-block">
+                    <input type="text" class="form-control custom-sub-form" name="page_title[]" placeholder="Provide a Page Title" />
+                </div>
+                <div class="col-md-4">
+                    <label name="warning_title[]" class="text-danger none"> *Title Required </label>
+                </div>
+                <div class="input-group col-md-4 text-right">
+                    <button type="button" class="btn btn-default deletePage" title="Delete this Page" name="addPage"><span class="glyphicon glyphicon-trash"></span></button>
+                </div>
+            </div>
+            <div class="panel-body custom-body">
+                <p class="uploadPanel">
+                    <strong><span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)</strong>
+                    <input type="file" name="image[]" class="file_upload btn btn-default" />
+
+                    <p name="warning_content[]" class="text-danger none"> *Content Required </p>
+                    <p name="warning_image[]" class="text-danger none" > *Can only accept .jpeg, .jpg, or .png </p>
+                </p>
+                <div class="input-group center-block">
+                    <textarea name="page_content[]" class="form-control textArea" placeholder="What is this page about?"></textarea>
+                </div>
+            </div>
+            <div class="panel-footer text-right custom-footer">
+                <label name="pageNumber" class="pageNum"></label>
+            </div>
+        </div>
     </div>
 </div>
 
