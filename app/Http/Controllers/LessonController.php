@@ -12,6 +12,7 @@ class LessonController extends Controller
 {
     public function __construct()
     {
+        // Require user to be logged in for all actions except index and show
         $this->middleware('auth', [
             'except' => ['index', 'show'],
         ]);
@@ -24,7 +25,7 @@ class LessonController extends Controller
      */
     public function index()
     {
-        return view('');
+        return view('lessons.index_lesson');
     }
 
     /**
@@ -78,8 +79,7 @@ class LessonController extends Controller
             $page->save();
         }
 
-        // TODO: redirect to show once that's implemented
-        return view('home');
+        return $this->show($lesson->id);
     }
 
     /**
@@ -90,10 +90,9 @@ class LessonController extends Controller
      */
     public function show($id)
     {
-        $lessons = Lesson::find($id);
-        $pages = Page::where('lesson_id','=',$id)->get();
+        $lesson = Lesson::find($id);
 
-        return view('lessons.view_lesson', compact('lessons', 'pages'));
+        return view('lessons.view_lesson', compact('lesson'));
     }
 
     /**
