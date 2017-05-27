@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Lesson;
 use App\Page;
-use Illuminate\Support\Facades\Input;
+
 class LessonController extends Controller
 {
     public function __construct()
@@ -51,36 +51,35 @@ class LessonController extends Controller
         $lesson = new Lesson;
 
         $lesson->user_id = Auth::id();
-        $files = $request->file('image.*');
-        $lesson->title = count($files);//$request->lesson_title;
+        $lesson->title = $request->lesson_title;
         $lesson->save();
 
         $titles = $request->input('page_title.*');
-        $files = $request->file('image.*');
         $contents = $request->input('page_content.*');
         for ($i = 0; $i < count($titles); $i++) {
             $page = new Page;
             $page->page_number = $i + 1;
             $page->lesson_id = $lesson->id;
-            $page->title = count($files);//$titles[$i];
+            $page->title = $titles[$i];
             $page->content = $contents[$i];
 
             // create unique filename. save in public/uploads
-            if (!is_null($files[$i])) {
+            if ($request->hasFile('image-' . $i)) {
+                $file = $request->file('image-' . $i);
                 // check if file exists already, just in case
-                $filename = uniqid(null, true) . '-' . $files[$i]->getClientOriginalName();
+                $filename = uniqid(null, true) . '-' . $file->getClientOriginalName();
                 while (file_exists(public_path('uploads') . '/' . $filename)) {
-                    $filename = uniqid(null, true) . '-' . $files[$i]->getClientOriginalName();
+                    $filename = uniqid(null, true) . '-' . $file->getClientOriginalName();
                 }
 
-                $files[$i]->move(public_path('uploads'), $filename);
+                $file->move(public_path('uploads'), $filename);
                 $page->image = $filename;
             }
 
             $page->save();
         }
 
-        return $this->show($lesson->id);
+        return redirect('/lessons/' . $lesson->id);
     }
 
     /**
@@ -104,11 +103,7 @@ class LessonController extends Controller
      */
     public function edit($id)
     {
-        $lesson = Lesson::find($id);
-        $pages = Page::where('lesson_id','=',$id)->get();
-
-
-        return view('lessons.edit_lesson',compact('lesson','pages'));
+        return view('lessons.edit_lesson');
     }
 
     /**
@@ -168,5 +163,4 @@ class LessonController extends Controller
     {
         return Page::where('lesson_id','=',$lesson_id)->where('page_number','=',$page_number)->get();
     }
-
 }

@@ -11,10 +11,9 @@ $(document).ready(function(){
 function addPage(){
 	pages = $("#lesson_form .page").length;
 	page = $("#page_template").clone().removeAttr("id").show();
-	$("input.file_upload", page).attr("name", "image[" + pages + "]");
+	$("input.file_upload", page).attr("name", "image-" + pages);
 	$("label.pageNum", page).html(pages + 1);
 	$(page).insertAfter($("#lesson_form .page").last());
-	console.log($(page)[0].outerHTML);
 }
 // doesn't have to have a query since it won't be submitted int the first place - リン
 function deletePage() {

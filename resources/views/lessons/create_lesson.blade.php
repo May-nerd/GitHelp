@@ -56,7 +56,7 @@
                         <div class="panel-body custom-body">
                              <p class="uploadPanel">
                                 <strong><span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)</strong>
-                                <input type="file" name="image[0]" class="file_upload btn btn-default" />
+                                <input type="file" name="image-0" class="file_upload btn btn-default" />
 
                                 <p name="warning_content[]" class="text-danger none"> *Content Required </p>
                                 <p name="warning_image[]" class="text-danger none" > *Can only accept .jpeg, .jpg, or .png </p>
@@ -92,7 +92,7 @@
             <div class="panel-body custom-body">
                 <p class="uploadPanel">
                     <strong><span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)</strong>
-                    <input type="file" name="image[]" class="file_upload btn btn-default" />
+                    <input type="file" name="image-" class="file_upload btn btn-default" />
 
                     <p name="warning_content[]" class="text-danger none"> *Content Required </p>
                     <p name="warning_image[]" class="text-danger none" > *Can only accept .jpeg, .jpg, or .png </p>
