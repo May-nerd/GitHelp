@@ -1,0 +1,40 @@
+.main-tags{
+	display: flex;
+}
+
+.main-tags > button{
+	width: 100%;
+	border-radius: 0;
+	color: black;
+	padding: 10px;
+}
+.tag-page{
+	color: black;
+}
+
+.tag-page > .col-xs-3,
+.tag-page > .col-sm-3,
+.tag-page > .col-md-3,
+.tag-page > .col-lg-3{
+	padding: 10px;
+	margin: auto;
+	text-align: center;
+}
+
+.mathPage{
+	background-color: #fe5e7c;
+}
+
+.mapehPage{
+	background-color: #f3e060;
+}
+
+.sciencePage{
+	background-color: #adec54;
+}
+.languagePage{
+	background-color: #5eb1fe;
+}
+.programmingPage{
+	background-color: #ddd;
+}

@@ -33,10 +33,11 @@ Route::resource('/lessons', 'LessonController');
 
 Route::group(['middleware' => 'auth'], function(){
 	
-	Route::get('/home', 'HomeController@index');
+	Route::get('/home', 'HomeController@show');
+	Route::get('/home/{id}', 'HomeController@index');
 	Route::get('/profile/{username}', 'ProfileController@profile');
 
-
+	Route::get('tags/{maincategory}/{tagname}', 'TagController@index');
 	Route::get('/profile/edit/{username}', 'ProfileController@edit');
 	Route::resource('/profile', 'ProfileController');
 });
