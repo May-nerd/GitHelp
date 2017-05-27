@@ -3,14 +3,10 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <form method="POST" action="/lessons/{{$lesson->id}}">
+        <form method="POST" action="/lessons/{{$lesson->id}}" enctype="multipart/form-data">
            {{ csrf_field() }}
-           <!-- {{ url('lessons/{$lesson->id}') }} -->
-            <!-- /lessons/{{$lesson->id}} -->
             {{ method_field('PUT') }}
             <div class="col-md-8 col-md-offset-2">
-                <!-- <h1>Create a Lesson for [Math]</h1> -->
-
                 <div class="form-group">
 
                     <div class="panel panel-default custom-panel">
@@ -25,7 +21,7 @@
                     <div class="panel panel-default custom-sub-panel">
                         <div class="panel-heading custom-heading">
                             <div class="col-md-6 pull-left center-block">
-                                <input type="text" class="form-control custom-sub-form" name="pageTitle" value="{{$page->title}}" />
+                                <input type="text" class="form-control custom-sub-form" name="pageTitle[]" value="{{$page->title}}" />
                             </div>
                             <div class="input-group col-md-6 text-right">
                                 <button class="btn btn-default" title="Delete this Page" name="addPage"><span class="glyphicon glyphicon-trash"></span></button>
@@ -33,14 +29,22 @@
                         </div>
                         <div class="panel-body custom-body">
                             <p id="uploadPanel">
-                                <label class="fileContainer btn btn-default">
-                                    <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image
-                                    <input type="file" name="imgUpload" class="btn btn-success"/>
+                                <label class="fileContainer btn btn-default" onclick="submit" >
+                                    <!-- <form data-page="{{$page->id}}" action="#" enctype="multipart/form-data" method="post"> -->
+                                        <span class="glyphicon glyphicon-upload"></span>&nbsp;Change Image
+                                        <input type="file" name="upload[]" class="imgUpload1" class="btn btn-success"/>
+                                            <!-- <input type="text" name="upload[]" value="" hidden /> -->
+                                        <!-- <input type="text" name="upload[]" value="something" hidden /> -->
+                                        <!-- <input type="text" name="imgUpload[]" value="" hidden /> -->
+                                        <!-- <button class="file btn btn-primary" type="submit">Change</button> -->
+                                    <!-- </form> -->
+                                    <!-- <input type="hidden" name="isFile[]" value="1"/> -->
                                 </label>
-                                <strong>Upload an Image for this page (Optional)</strong>
+                                <img class="img-responsive" src="/uploads/{{$page->image}}" />
+                                <strong>Change Image for this page (Optional)</strong>
                             </p>
                             <div class="input-group center-block">
-                              <textarea name="pageContent" class="form-control" id="textArea" placeholder="What is this page about?">
+                              <textarea name="pageContent[]" class="form-control" placeholder="What is this page about?">
                               {{$page->content}}
                               </textarea>
                             </div>
@@ -54,8 +58,7 @@
                 </div>  
             </div>
 
-
-            <button class="btn btn-primary pull-right" title="Add another Page" name="addPage" id="addPgBtn"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add a Page</button>
+            <!-- <button class="btn btn-primary pull-right" title="Add another Page" name="addPage" id="addPgBtn"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add a Page</button> -->
 
         </form>
     </div>

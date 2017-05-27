@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Lesson;
 use App\Page;
-
+use Illuminate\Support\Facades\Input;
 class LessonController extends Controller
 {
     public function __construct()
@@ -118,33 +118,39 @@ class LessonController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // var_dump($id);
         $lesson = Lesson::find($id);
         $lesson->title = $request->lesson_title;
         $lesson->save();
-        return redirect('home');
 
-        // $titles = $request->input('pageTitle.*');
-        // // $files = $request->file('image.*');
-        // $contents = $request->input('pageContent.*');
+        $titles = $request->input('pageTitle.*');
+        $contents = $request->input('pageContent.*');
+        $upload = $request->file('upload.*');
+        for($i = 0; $i < count($titles); $i++){
+            if(!isset($upload[$i])){
+                $upload[$i] = null;
+            }
+        }
+        foreach ($upload as $value) {
+            # code...
+            echo $value;
+            echo " | ";
 
+        }
+
+
+        // $page = Page::where('lesson_id','=',$id)->get();
         // for ($i = 0; $i < count($titles); $i++) {
-        //     $page->page_number = $i + 1;
-        //     $page->title = $titles[$i];
-        //     $page->content = $contents[$i];
-
-            // // create unique filename. save in public/uploads
-            // if (!is_null($files[$i])) {
-            //     // check if file exists already, just in case
-            //     $filename = uniqid(null, true) . '-' . $files[$i]->getClientOriginalName();
-            //     while (file_exists(public_path('uploads') . '/' . $filename)) {
-            //         $filename = uniqid(null, true) . '-' . $files[$i]->getClientOriginalName();
-            //     }
-
-            //     $files[$i]->move(public_path('uploads'), $filename);
-            //     $page->image = $filename;
-            // }
-            //$page->save();
+        //     $page[$i]->title = $titles[$i];
+        //     $page[$i]->content = $contents[$i];
+        //  // updating photo wont work if hindi all
+        //     if ($files[$i] != null) {
+        //         $filename = uniqid(null, true) . '-' . $files[$i]->getClientOriginalName();
+        //         $files[$i]->move(public_path('uploads'), $filename);
+        //         $page[$i]->image = $filename;
+        //     }
+        //     $page[$i]->save();
+        // }
+        // return redirect("edit_lesson_plan/$id");
     }
 
     /**
@@ -160,4 +166,5 @@ class LessonController extends Controller
         $lesson->delete();
         return redirect('/home');
     }
+
 }

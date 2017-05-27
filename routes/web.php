@@ -41,3 +41,5 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/profile/edit/{username}', 'ProfileController@edit');
 	Route::resource('/profile', 'ProfileController');
 });
+
+

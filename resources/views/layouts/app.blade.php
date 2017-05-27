@@ -26,6 +26,8 @@
     </script>
     <script type="text/javascript" src="/js/js.js"></script>
     <script type="text/javascript" src="/js/script.js"></script>
+    <script type="text/javascript" src="/js/script-image.js"></script>
+
 </head>
 <body>
     <div id="app">
