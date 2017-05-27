@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 		<div class="panel panel-default text-center lessonsidebar">
 			<div class="panel-heading">
 				<h6>
@@ -12,13 +11,13 @@
 						<a href="#">Infinite Limits</a>
 					</span>
 				</h6>
-				<h4>{{ $lessons->title }}</h4>
-				<h6>Lesson by {{ $lessons->createdBy->name }}</h6>
-				<input type="hidden" id="lesson_id" name="" value="{{ $lessons->id }}" >
+				<h4>{{ $lesson->title }}</h4>
+				<h6>Lesson by {{ $lesson->createdBy->name }}</h6>
+				<input type="hidden" id="lesson_id" name="" value="{{ $lesson->id }}" >
 				<input type="hidden" id="current_page" name="" value="1" >
 			</div>
 			<div class="panel-body lessonnav">
-				@forelse($pages as $page)
+                @forelse($lesson->pages as $page)
 					<a class="page_link" href="#" id="{{ $page->page_number }}">{{ $page->title }}</a>
 				@empty
 				@endforelse
@@ -26,16 +25,16 @@
 		</div>
 		<div class="content">
 			
-			@if(count($pages))
+            @if(count($lesson->pages))
 
-			<h1 class="text-center" id="lesson_title">{{ $pages[0]->title }}</h1>
+            <h1 class="text-center" id="lesson_title">{{ $lesson->pages[0]->title }}</h1>
 			<div class="well sampleimg">
 				<h1 class="text-center">< PUT IMAGE / VIDEO IN THIS BOX ></h1>
 			</div>
 
 			<hr />
 			<p id="lesson_content">
-				{{$pages[0]->content}}
+                {{ $lesson->pages[0]->content }}
 			</p>
 			@else
 			<h1 class="text-center" id="lesson_title">No pages available</h1>
@@ -48,9 +47,9 @@
 @endsection
 
 @push('styles')
-	<link href="{{ asset('css/lesson.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/lesson.css') }}" rel="stylesheet">
 @endpush
 
 @push('scripts')
-	<script type="text/javascript" src="{{ asset('js/lesson.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/lesson.js') }}"></script>
 @endpush

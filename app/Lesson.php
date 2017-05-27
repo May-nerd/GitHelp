@@ -21,5 +21,4 @@ class Lesson extends Model
     public function pages(){
     	return $this->hasMany('App\Page');
     }
-
 }
