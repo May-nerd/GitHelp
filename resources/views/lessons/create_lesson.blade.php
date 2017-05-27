@@ -16,7 +16,7 @@
                         <div class="panel-body">
                             <div class="col-md-8 input-group center-block text-center">
                                 <input id="lesson_title" type="text" class="form-control text-center custom-form" name="lesson_title" placeholder="LESSON TITLE" />
-                                 <p id="warning_lesson_title" class="text-danger"> *Lesson Title is required </p>
+                                 <p id="warning_lesson_title" class="text-danger none"> *Lesson Title is required </p>
                             </div>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                                 <input type="text" class="form-control custom-sub-form" name="page_title[]" placeholder="Provide a Page Title" />
                             </div>
                             <div class="col-md-4">
-                                <label name="warning_title[]" class="text-danger"> *Title Required </label>
+                                <label name="warning_title[]" class="text-danger none"> *Title Required </label>
                             </div>
                             <div class="input-group col-md-4 text-right">
                                 <button type="button" class="btn btn-default deletePage" title="Delete this Page" name="addPage"><span class="glyphicon glyphicon-trash"></span></button>
@@ -57,17 +57,26 @@
                         <div class="panel-body custom-body">
                             <p class="uploadPanel">
                                 {{--
-                                <!-- Success prompt for image upload is added. Just use the "none"  class to display:none. tnx -->
-                               
-                                --}}
-                                 <label class="fileContainer btn btn-default">
+                                 --}}
+                                <strong><span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)</strong>
+                                    <input type="file" name="image[]" class="btn btn-default" />
+                               <!--  <label  class="fileContainer btn btn-default">
                                     <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)
-                                    <input type="file" name="image[]"/>
-                                    <p name="warning_image[]" class="text-danger none" > *Can only accept .jpeg, .jpg, or .png </p>
-                                    <p name="success_image[]" class="text-success" > <span class="glyphicon glyphicon-ok"></span>&nbsp;Image successfully uploaded. </p>
-                                </label>
+                                    <input type="file" name="image[]" />
+                                </label> -->
+                                <!-- <div>
+                                    <input type="file" name="image[]" class="inputfile inputfile-6"/>
+                                    <label for="image">
+                                        <span id="echo-file">echo img filename here</span>
+                                        <strong>
+                                            Upload an Image (optional)
+                                        </strong>
+                                    </label>
+                                </div> -->
+                                <p name="warning_content[]" class="text-danger none"> *Content Required </p>
+                                <p name="warning_image[]" class="text-danger none" > *Can only accept .jpeg, .jpg, or .png </p>
                             </p>
-                            <p name="warning_content[]" class="text-danger"> *Content Required </p>
+                            
                             <div class="input-group center-block">
                               <textarea name="page_content[]" class="form-control textArea" placeholder="What is this page about?"></textarea>
                             </div>
@@ -83,25 +92,29 @@
                                 <input type="text" class="form-control custom-sub-form" name="page_title[]" placeholder="Provide a Page Title" />
                             </div>
                             <div class="col-md-4">
-                                <label name="warning_title[]" class="text-danger"> *Title Required </label>
+                                <label name="warning_title[]" class="text-danger none"> *Title Required </label>
                             </div> 
                             <div class="input-group col-md-6 text-right">
                                 <button type="button" class="deletePage btn btn-default" title="Delete this Page" name="deletePage" id="hidden"><span class="glyphicon glyphicon-trash"></span></button>
                             </div>
                         </div>
                         <div class="panel-body custom-body">
-                            <p class="uploadPanel">
+                             <p class="uploadPanel">
                                 {{--
-                         
-                                --}}
-                                <label  class="fileContainer btn btn-default">
-                                    <span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)
-                                    <input type="file" name="image[]" />
-                                    <p name="warning_image[]" class="text-danger none"> *Can only accept .jpeg, .jpg, or .png </p>
-                                    <p name="success_image[]" class="text-success" > <span class="glyphicon glyphicon-ok"></span>&nbsp;Image successfully uploaded. </p>
-                                </label>
+                                 --}}
+                                
+                                 <!-- <div  class="fileContainer btn btn-default"> -->
+
+                                <strong><span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)</strong>
+                                    <input type="file" name="image[]" class="btn btn-default" />
+                                   <!--  <label for="image">
+                                        <span id="echo-file" class="echo-file">echo img filename here</span>
+                                </label> -->
+                                <!-- </div> -->
+
+                                <p name="warning_content[]" class="text-danger none"> *Content Required </p>
+                                <p name="warning_image[]" class="text-danger none" > *Can only accept .jpeg, .jpg, or .png </p>
                             </p>
-                            <p name="warning_content[]" class="text-danger"> *Content Required </p>
                             <div class="input-group center-block">
                               <textarea name="page_content[]" class="form-control textArea" placeholder="What is this page about?"></textarea>
                             </div>
@@ -124,4 +137,8 @@
 
 @push('styles')
     <link rel="stylesheet" type="text/css" href="/css/create_lesson.css"/>
+@endpush
+
+@push('scripts')
+     <!-- <script src="/js/custom-file-input.js"></script> -->
 @endpush

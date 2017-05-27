@@ -116,3 +116,21 @@
     text-align: right;
     top: 0;
 }
+
+.echo-file
+{
+    padding: 0.625rem 1.25rem;
+    border: 2px solid #ccc;
+}
+
+.echo-file{
+    width: 200px;
+    min-height: 2em;
+    display: inline-block;
+    border-radius: 4px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: top;
+}
+
