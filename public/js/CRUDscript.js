@@ -9,8 +9,8 @@ $(document).ready(function(){
 
 /* PWNED BY AGENT PROXY "SERVING YOU SPAGHETTI CODE SINCE 2014 FIXED NA PLESSSS" */
 function addPage(){
-	pages = $("#lesson_form .page").length;
-	page = $("#page_template").clone().removeAttr("id").show();
+	var pages = $("#lesson_form .page").length;
+	var page = $("#page_template").clone().removeAttr("id").show();
 	$("input.file_upload", page).attr("name", "image-" + pages);
 	$("label.pageNum", page).html(pages + 1);
 	$(page).insertAfter($("#lesson_form .page").last());
@@ -25,51 +25,47 @@ function deletePage() {
 	}
 }
 
-/* WHAT IS DIS BLSHT - AGENT P " ONE SPAGHETTI COMING UP"*/
+// I'm allergic to bullshit
 function validate(){
-	pagesContent = document.getElementsByName("page_content[]");
-	pagesTitle = document.getElementsByName("page_title[]");
-	warningContent = document.getElementsByName("warning_content[]");
-	warningTitle = document.getElementsByName("warning_title[]");
-	warningImage = document.getElementsByName("warning_image[]");
-	imgFile = document.getElementsByName("image[]");
-	var bool = true;
+	var pages = $("#lesson_form .page");
+	var passed = true;
 
-	for(i=1;i<pagesContent.length;i++){
-		if(document.getElementById('lesson_title').value == ""){
-			document.getElementById("warning_lesson_title").style.display = "block";
-			bool = false;
-		}
-		else{
-			document.getElementById("warning_lesson_title").style.display = "hidden";
-		}
-		if(imgFile[i].value != ""){
-			fileType = imgFile[i].value.split('.').pop();
-			console.log(fileType);
-			if(fileType == "jpeg"||fileType == "png"||fileType =="jpg"){
-				warningImage[i].style.display = "hidden";
-			}
-			else{
-				bool = false;
-				warningImage[i].style.display = "block";
-			}
-		}
-		if(pagesContent[i].value == ""){
-			bool = false;
-			warningContent[i].style.display = "block";
-		}
-		else{
-			warningContent[i].style.display = "none";
-		}
-	
-		if(pagesTitle[i].value == ""){
-			bool = false;
-			warningTitle[i].style.display = "block";
-		}
-		else{
-			warningTitle[i].style.display = "none";
-		}
+	// lesson title
+	if ($("#lesson_title").val() === "") {
+		$("#warning_lesson_title").show();
+		passed = false;
+	} else {
+		$("#warning_lesson_title").hide();
 	}
-	console.log(bool);
-	return bool;
+
+	$(pages).each(function() {
+		// image extension
+		if ($(".file_upload", this).val() !== "") {
+			var ext = $(".file_upload", this).val().split(".").pop().toLowerCase();
+			if (["jpeg", "jpg", "png"].indexOf(ext) === -1) {
+				$(".warning_image", this).show();
+				passed = false;
+			} else {
+				$(".warning_image", this).hide();
+			}
+		}
+
+		// page title
+		if ($("input[name='page_title\\[\\]']", this).val() === "") {
+			$(".warning_title", this).show();
+			passed = false;
+		} else {
+			$(".warning_title", this).hide();
+		}
+
+		// page content
+		if ($("textarea[name='page_content\\[\\]']", this).val() === "") {
+			$(".warning_content", this).show();
+			passed = false;
+		} else {
+			$(".warning_content", this).hide();
+		}
+	});
+
+	return passed;
 }

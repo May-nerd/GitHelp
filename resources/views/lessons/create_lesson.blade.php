@@ -15,7 +15,7 @@
                     <div class="panel panel-default custom-panel">
                         <div class="panel-body">
                             <div class="col-md-8 input-group center-block text-center">
-                                <input id="lesson_title" type="text" class="form-control text-center custom-form" name="lesson_title" placeholder="LESSON TITLE" />
+                                <input id="lesson_title" type="text" class="form-control text-center custom-form" name="lesson_title" placeholder="LESSON TITLE">
                                  <p id="warning_lesson_title" class="text-danger none"> *Lesson Title is required </p>
                             </div>
                         </div>
@@ -32,8 +32,8 @@
                                         <option>Language</option>
                                         <option>Science</option>
                                         <option>Programming</option>
-                                    </select>   
-                                </label>                       
+                                    </select>
+                                </label>
                              </div>
                              <div class="input-group col-md-12">
                                 <input type="text" class="form-control custom-tag-form" name="tags" placeholder="Tags" />
@@ -47,7 +47,7 @@
                                 <input type="text" class="form-control custom-sub-form" name="page_title[]" placeholder="Provide a Page Title" />
                             </div>
                             <div class="col-md-4">
-                                <label name="warning_title[]" class="text-danger none"> *Title Required </label>
+                                <label class="warning_title text-danger none"> *Title Required </label>
                             </div> 
                             <div class="input-group col-md-6 text-right">
                                 <button type="button" class="deletePage btn btn-default" title="Delete this Page" name="deletePage" id="hidden"><span class="glyphicon glyphicon-trash"></span></button>
@@ -58,8 +58,8 @@
                                 <strong><span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)</strong>
                                 <input type="file" name="image-0" class="file_upload btn btn-default" />
 
-                                <p name="warning_content[]" class="text-danger none"> *Content Required </p>
-                                <p name="warning_image[]" class="text-danger none" > *Can only accept .jpeg, .jpg, or .png </p>
+                                <p class="warning_content text-danger none"> *Content Required </p>
+                                <p class="warning_image text-danger none" > *Can only accept .jpeg, .jpg, or .png </p>
                             </p>
                             <div class="input-group center-block">
                               <textarea name="page_content[]" class="form-control textArea" placeholder="What is this page about?"></textarea>
@@ -83,7 +83,7 @@
                     <input type="text" class="form-control custom-sub-form" name="page_title[]" placeholder="Provide a Page Title" />
                 </div>
                 <div class="col-md-4">
-                    <label name="warning_title[]" class="text-danger none"> *Title Required </label>
+                    <label class="warning_title text-danger none"> *Title Required </label>
                 </div>
                 <div class="input-group col-md-4 text-right">
                     <button type="button" class="btn btn-default deletePage" title="Delete this Page" name="addPage"><span class="glyphicon glyphicon-trash"></span></button>
@@ -94,8 +94,8 @@
                     <strong><span class="glyphicon glyphicon-upload"></span>&nbsp;Upload an Image (optional)</strong>
                     <input type="file" name="image-" class="file_upload btn btn-default" />
 
-                    <p name="warning_content[]" class="text-danger none"> *Content Required </p>
-                    <p name="warning_image[]" class="text-danger none" > *Can only accept .jpeg, .jpg, or .png </p>
+                    <p class="warning_content text-danger none"> *Content Required </p>
+                    <p class="warning_image text-danger none" > *Can only accept .jpeg, .jpg, or .png </p>
                 </p>
                 <div class="input-group center-block">
                     <textarea name="page_content[]" class="form-control textArea" placeholder="What is this page about?"></textarea>
