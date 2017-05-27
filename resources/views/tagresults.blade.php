@@ -22,12 +22,19 @@
                         <div id='lessons-list'>
                             @forelse($lessons as $lesson)
                             <div class="lesson">
-                                <button class="btn btn-danger">{{$lesson->title}}</h1>
+                                <div class="result">
+                                    <p class="result-title"> {{ $lesson->title }} </p>
+                                    <p class="result-author"> {{ $lesson->name }} </p>
+                                    <p class="result-date">{{ $lesson->created_at }}</p>
+                                    <a href="#" class="btn btn-primary view-button">View Lesson</a>
+                                </div>
                             </div>
                             @empty
                                 <h1>No lessons found.</h1>
                             @endforelse
                         </div>
+
+                
                 </div>
             </div>
        {{--  </div> --}}
