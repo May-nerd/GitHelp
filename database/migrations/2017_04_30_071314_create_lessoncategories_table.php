@@ -19,8 +19,8 @@ class CreateLessoncategoriesTable extends Migration
             $table->integer('mainlesson_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('lesson_id')->references('id')->on('lessons');
-            $table->foreign('mainlesson_id')->references('id')->on('mainlessons');
+            // $table->foreign('lesson_id')->references('id')->on('lessons');
+            // $table->foreign('mainlesson_id')->references('id')->on('mainlessons');
         });
     }
 

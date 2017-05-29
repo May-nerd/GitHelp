@@ -71,8 +71,8 @@ function goToTags(lessonId){
 			var tagnames = "";
 			console.log(data);
 			$.each(data, function (key, value){
-				tagnames += "<div class='col-md-3 col-lg-3 col-xs-3 col-sm-3 "+color+"'>"+
-				"<a href='tags/"+value['name']+"/"+value['tagname']+"'"+ value['id'] +">"+value['tagname'] + "("+value['count']+
+				tagnames += "<div class='col-md-3 col-lg-3 col-xs-3 col-sm-3 "+ color +"'>"+
+				"<a href='/tags/"+value['name']+"/"+value['tagname']+"'"+ value['id'] +" class='tagNames'>"+value['tagname'] + "("+value['count']+
 				")"+"</a></div>";
 			});
 			$('#tagsPage').html(tagnames);

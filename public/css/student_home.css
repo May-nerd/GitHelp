@@ -4,11 +4,15 @@
 
 .main-tags > button{
 	width: 100%;
-	border-radius: 0;
+	border-radius: 0px;
 	color: black;
 	padding: 10px;
 }
 .tag-page{
+	color: black;
+}
+
+.tagNames:link{
 	color: black;
 }
 
