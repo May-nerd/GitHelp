@@ -26,7 +26,7 @@
                                     <p class="result-title"> {{ $lesson->title }} </p>
                                     <p class="result-author"> {{ $lesson->name }} </p>
                                     <p class="result-date">{{ $lesson->created_at }}</p>
-                                    <a href="#" class="btn btn-primary view-button">View Lesson</a>
+                                    <a href="/lessons/{{ $lesson->id }}" class="btn btn-primary view-button">View Lesson</a>
                                 </div>
                             </div>
                             @empty

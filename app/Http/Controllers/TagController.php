@@ -44,10 +44,8 @@ class TagController extends Controller
         ->groupBy('tags.id')
         ->get();
 
-
-
-
         return view('tagresults', compact('maincategory', 'tagname', 'lessons'));
+
     }
 }
 
