@@ -11,6 +11,7 @@
     <title>{{ config('app.name', 'GitHelp') }}</title>
 
     <!-- Styles -->
+    <link rel="icon" href="/images/GitHelp_Logo.png" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom_bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('css/form.css') }}" rel="stylesheet">
